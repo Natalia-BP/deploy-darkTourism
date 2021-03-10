@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-import ComingSoon from "../component/HOME/ComingSoon";
+import ComingSoon from "../component/home/ComingSoon";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);

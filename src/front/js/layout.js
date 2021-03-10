@@ -32,7 +32,7 @@ const Layout = () => {
 						<Route exact path="/signup">
 							<SignUp />
 						</Route>
-                        <Route exact path="/passwordrecover">
+						<Route exact path="/passwordrecover">
 							<PasswordRecover />
 						</Route>
 						<Route>
