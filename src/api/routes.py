@@ -9,10 +9,26 @@ api = Blueprint('api', __name__)
 
 
 @api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route("/hello/<int:id>", methods=["GET"])
+def handle_hello(id=None):
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend"
-    }
+    if request.method == "GET":
+        if not id:
+            response_body = {
+                "message": "Hello! I'm a message that came from the backend GET"
+            }
 
-    return jsonify(response_body), 200
+            return jsonify(response_body), 200
+        
+        response_body = {
+                "message": f"Hello! I'm a message that came from the backend GET {id}" 
+            }
+
+        return jsonify(response_body), 200
+
+    if request.method == "POST":
+        response_body = {
+            "message": "Hello! I'm a message that came from the backend POST"
+        }
+
+        return jsonify(response_body), 200
