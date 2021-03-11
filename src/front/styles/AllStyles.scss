@@ -1,6 +1,6 @@
 // INICIO ESTILO DESTACADOS
 .fondoDestacados{
-    background-color: #00110b;
+    background-color: #323C73;
 }
 
 .imgDest{
@@ -26,6 +26,27 @@
     margin-left: 4rem;
 }
 // FIN ESTILO DESTACADOS
+
+
+/* Footer styling NatiBP */
+footer {
+    background-color:  #3D4A8F;
+    color: rgb(250, 250, 255)
+}
+
+footer h3 {
+    margin-bottom: 2rem;
+}
+
+footer .fab {
+    font-size: 2rem;
+    color: rgb(250, 250, 255);
+}
+
+footer .fab:hover,
+footer .indexList li:hover {
+    color: #E1D5F5;
+}
 
 // clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
 .bg-image{
