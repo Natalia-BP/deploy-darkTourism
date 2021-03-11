@@ -33,9 +33,9 @@ export const Navbar = () => {
 						</a>
 					</li>
 				</ul>
-			</div>
-			<div className="mx-auto">
-				<img src={Logo} width="25px" />
+				<div className="nav-logo mx-auto">
+					<img src={Logo} width="25px" />
+				</div>
 			</div>
 			<div>
 				<i className="fas fa-heart" />
