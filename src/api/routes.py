@@ -4,6 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
+from werkzeug.security import generate_password_hash, check_password_hash
 
 api = Blueprint('api', __name__)
 
@@ -51,8 +52,8 @@ def register():
     if request.method == 'POST':
         email = request.json.get("email", None) # Por default es None, o sea si no trae nada
         password = request.json.get("password", None)
-        #is_active = request.json.get("is_active", True) # Es true porque se supone que si se crea un usuario este va a estar activo
-        #nick_name = request.json.get("nick_name")
+        is_active = request.json.get("is_active", True) # Es true porque se supone que si se crea un usuario este va a estar activo
+        nickname = request.json.get("nick_name")
 
         if not email:
             return jsonify({"Mensaje":"email es requerido"}), 400
@@ -66,8 +67,8 @@ def register():
         user.email = email
         hashed_password = generate_password_hash(password)
         user.password = hashed_password
-        #user.is_active = is_active
-        #user.nick_name = nick_name
+        user.is_active = is_active
+        user.nickname = nickname
 
         db.session.add(user)
         db.session.commit()

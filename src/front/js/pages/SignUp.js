@@ -8,7 +8,7 @@ import "../../styles/AllStyles.scss";
 export const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [pass, setPass] = useState("");
-	//const [nickName, setNickName] = useState("");
+	const [nickName, setNickName] = useState("");
 	const [redirect, setRedirect] = useState(false);
 
 	const handleSubmit = e => {
@@ -19,9 +19,9 @@ export const SignUp = () => {
 		console.log(email, pass);
 
 		// FETCH
-		const data = { email: email, password: pass, first_name: firstName, second_name: secondName };
+		const data = { email: email, password: pass, nick_name: nickName };
 
-		fetch("https://3001-chocolate-cod-cg86ywgl.ws-us03.gitpod.io/register", {
+		fetch("https://3001-aqua-ferret-6ntycunm.ws-us03.gitpod.io/api/register", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -80,7 +80,7 @@ export const SignUp = () => {
 					</div>
 					<input type="submit" className="btn btn-primary" value="Registrarse" />
 				</form>
-				{redirect ? <Redirect to="/signup" /> : ""}
+				{redirect ? <Redirect to="/" /> : ""}
 			</div>
 		</div>
 	);
