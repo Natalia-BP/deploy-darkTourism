@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import { Destacados } from "../component/home/Destacados";
 import { Jumbotron } from "../component/home/Jumbotron";
 import { DescripHome } from "../component/home/DescripHome";
+import { ComingSoon } from "../component/home/ComingSoon";
+
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -14,7 +16,9 @@ export const Home = () => {
 			<div className="fondoDestacados">
 				<Destacados />
 			</div>
-			<h1>GRID IMAGS</h1>
+			<div className="container">
+				<ComingSoon />
+			</div>
 		</div>
 	);
 };
