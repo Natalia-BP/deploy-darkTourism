@@ -52,7 +52,9 @@ export const Navbar = () => {
 				</button>
 				<div className="dropdown-menu dropdown-menu-right">
 					<button className="dropdown-item" type="button">
-						Action
+						<Link to="/signup" className="dropdown-item">
+							Registrarse
+						</Link>
 					</button>
 					<button className="dropdown-item" type="button">
 						Another action
