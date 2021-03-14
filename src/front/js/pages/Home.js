@@ -5,7 +5,6 @@ import { Jumbotron } from "../component/home/Jumbotron";
 import { DescripHome } from "../component/home/DescripHome";
 import { ComingSoon } from "../component/home/ComingSoon";
 
-
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 

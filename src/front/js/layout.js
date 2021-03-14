@@ -10,7 +10,9 @@ import { PasswordRecover } from "./pages/PasswordRecover";
 
 import { Navbar } from "./component/componentes_fijos/Navbar";
 import { Footer } from "./component/componentes_fijos/Footer";
+import { ModalLogin } from "./component/modal_login/ModalLogin";
 
+//import ModalLogin from "./src/front/js/component/modal_login/ModalLogin.js"
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -31,6 +33,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/signup">
 							<SignUp />
+						</Route>
+						<Route exact path="/login">
+							<ModalLogin />
 						</Route>
 						<Route exact path="/passwordrecover">
 							<PasswordRecover />
