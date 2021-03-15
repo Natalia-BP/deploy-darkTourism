@@ -18,9 +18,9 @@ export const Navbar = () => {
 			<div className="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul className="navbar-nav">
 					<li className="nav-item active">
-						<a className="nav-link" href="#">
+						<Link to="/" className="nav-link">
 							Home <span className="sr-only">(current)</span>
-						</a>
+						</Link>
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#">
@@ -34,7 +34,9 @@ export const Navbar = () => {
 					</li>
 				</ul>
 				<div className="nav-logo mx-auto">
-					<img src={Logo} width="25px" />
+					<Link to="/">
+						<img src={Logo} width="25px" />
+					</Link>
 				</div>
 			</div>
 			<div>
