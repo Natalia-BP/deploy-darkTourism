@@ -57,10 +57,14 @@ export const Navbar = () => {
 						</Link>
 					</button>
 					<button className="dropdown-item" type="button">
-						Another action
+						<Link to="/Login" className="dropdown-item">
+							Login
+						</Link>
 					</button>
 					<button className="dropdown-item" type="button">
-						Something else here
+						<Link to="/passwordrecover" className="dropdown-item">
+							PasswordRecover
+						</Link>
 					</button>
 				</div>
 			</div>
