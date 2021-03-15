@@ -13,7 +13,7 @@ export const Carrusel = () => {
 				<li data-target="#carouselExampleIndicators" data-slide-to="1" />
 				<li data-target="#carouselExampleIndicators" data-slide-to="2" />
 			</ol>
-			<div className="carousel-inner rounded-pill">
+			<div className="carousel-inner rounded">
 				<div className="carousel-item active">
 					<img
 						src="https://elrincondelmae.files.wordpress.com/2015/05/isla-san-lucas-costa-rica.jpg"

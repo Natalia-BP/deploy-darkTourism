@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../styles/AllStyles.scss";
+import { Link } from "react-router-dom";
 
 export const Destacados = () => {
 	return (
@@ -11,10 +12,12 @@ export const Destacados = () => {
 					<div />
 					<div className="col-auto">
 						<div>
-							<img
-								className="imgDest"
-								src="https://maritzacartin.files.wordpress.com/2019/02/img_8526-1.jpg?w=300"
-							/>
+							<Link to="/infoplace">
+								<img
+									className="imgDest"
+									src="https://maritzacartin.files.wordpress.com/2019/02/img_8526-1.jpg?w=300"
+								/>
+							</Link>
 							<div>
 								<h6 className="text-white mt-2 mb-0">Sanatorio Duran</h6>
 								<p className="text-white locationDest fw-light">Cartago, Prusia</p>
