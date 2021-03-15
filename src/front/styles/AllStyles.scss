@@ -51,16 +51,7 @@ footer .indexList li:hover {
 }
 /* /Footer styling Nati BP */
 
-/*.mitadTextura {
-    background-image: url("../img/textura_fondo.jpg");
-    background-size: 100%;
-}
-
-.position-absolute {
-    top: 1rem;
-    left: 3rem;
-}*/
-
+/* DescripHome Nati BP*/
 .stackImgs {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -91,6 +82,23 @@ footer .indexList li:hover {
     grid-column: 7 / span 3;
     padding-top: 6rem;
 }
+/* //DescripHome Nati BP*/
+
+/* Comments InfoPlace Nati BP */
+.userComments {
+    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse la cajita de comments
+    color: white;
+}
+
+.userComments .comment {
+   background-color: rgba(255, 255, 255, 0.3);
+   color: inherit;
+}
+
+// hr {
+//     border: 1.2px solid white;
+// }
+/* //Comments InfoPlace Nati BP */
 
 // clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
 .bg-image{
@@ -128,6 +136,7 @@ footer .indexList li:hover {
     filter: grayscale(0) brightness(1);
 }
 
+<<<<<<< HEAD
 // BOTONES LOGIN REDES SOCIALES
 .facebook{
     background-color: #3B5998;
@@ -160,3 +169,9 @@ footer .indexList li:hover {
   margin-right: 200px
 }
 // BOTONES LOGIN REDES SOCIALES
+=======
+//Carousel
+.carousel-inner{
+    box-shadow: 10px 10px 25px #696969;
+}
+>>>>>>> fdd98fc43965b81cffdeb5d5b6dbe885b4646127
