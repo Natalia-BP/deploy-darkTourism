@@ -80,7 +80,7 @@ export const SignUp = () => {
 					</div>
 					<input type="submit" className="btn btn-primary" value="Registrarse" />
 				</form>
-				{redirect ? <Redirect to="/" /> : ""}
+				{redirect ? <Redirect to="/login" /> : ""}
 			</div>
 		</div>
 	);
