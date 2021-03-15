@@ -13,7 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+
+			nike_name: "nike name",
+			token: null
+			//user_id: null
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -41,6 +45,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+
+			login: () => {
+				setStore({
+					nike_name: sessionStorage.getItem("nike_name"),
+					token: sessionStorage.getItem("u_token"),
+					user_id: sessionStorage.getItem("user_id")
+				});
 			}
 		}
 	};

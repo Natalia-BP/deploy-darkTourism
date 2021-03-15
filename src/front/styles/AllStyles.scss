@@ -49,16 +49,7 @@ footer .indexList li:hover {
 }
 /* /Footer styling Nati BP */
 
-/*.mitadTextura {
-    background-image: url("../img/textura_fondo.jpg");
-    background-size: 100%;
-}
-
-.position-absolute {
-    top: 1rem;
-    left: 3rem;
-}*/
-
+/* DescripHome Nati BP*/
 .stackImgs {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -89,6 +80,23 @@ footer .indexList li:hover {
     grid-column: 7 / span 3;
     padding-top: 6rem;
 }
+/* //DescripHome Nati BP*/
+
+/* Comments InfoPlace Nati BP */
+.userComments {
+    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse la cajita de comments
+    color: white;
+}
+
+.userComments .comment {
+   background-color: rgba(255, 255, 255, 0.3);
+   color: inherit;
+}
+
+// hr {
+//     border: 1.2px solid white;
+// }
+/* //Comments InfoPlace Nati BP */
 
 // clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
 .bg-image{
