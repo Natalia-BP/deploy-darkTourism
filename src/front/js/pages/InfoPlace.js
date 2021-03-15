@@ -5,7 +5,6 @@ import React, { useContext } from "react";
 // import { DescripHome } from "../component/home/DescripHome";
 // import { ComingSoon } from "../component/home/ComingSoon";
 
-
 export const InfoPlace = () => {
 	const { store, actions } = useContext(Context);
 
@@ -14,8 +13,8 @@ export const InfoPlace = () => {
 			<h1>Carrusel</h1>
 			<h1>Descripción del lugar</h1>
 			<h1>Mapa</h1>
-            <h1>Comentarios de usuario</h1>
-            <h1>Formulario de Comentarios</h1>
+			<h1>Comentarios de usuario</h1>
+			<h1>Formulario de Comentarios</h1>
 		</div>
 	);
 };
