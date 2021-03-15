@@ -21,6 +21,7 @@ export const SignUp = () => {
 		// FETCH
 		const data = { email: email, password: pass, nick_name: nickName };
 
+
 		fetch("https://3001-fuchsia-ox-0aqrp8qt.ws-us03.gitpod.io/api/register", {
 			method: "POST",
 			headers: {
