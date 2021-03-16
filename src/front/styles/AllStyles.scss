@@ -172,19 +172,54 @@ footer .indexList li:hover {
 .carousel-inner{
     box-shadow: 10px 10px 25px #696969;
 }
+.carousel.slide{
+    margin-bottom: 10rem;
+    width: 80%;
+    margin-left: 6rem;
+
+}
+
+//DescripPlace
+.text-description{
+    grid-row: 1;
+    grid-column: 2 / span 4;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.descrip_place.background{
+    background-color: rgb(158, 163, 189);
+    border-radius: 5px;
+}
+.descrip_place.back{
+    grid-row: 1;
+    grid-column: 9 / -1;
+    z-index: 1;
+    padding-top: 8rem;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+
+}
+.descrip_place.front{
+    grid-row: 1;
+    grid-column: 8 / span 3;
+    z-index: 2;
+    position: relative;
+    bottom: 2rem;
+}
 
 // ESTILOS SIGNUP
 #bgimg{
     margin: 0;
     padding: 0;
     background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80);
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 #formSignUp{
     background: rgba(0,0,0,0.5);
     width: 500px;
-    margin: auto;
+    margin: 25px 50px 75px 700px;
 }
 // FIN ESTILOS SIGNUP
