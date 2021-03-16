@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
 //Componentes
@@ -12,6 +13,7 @@ import { DescripPlace } from "../component/place/DescripPlace";
 
 export const InfoPlace = () => {
 	const { store, actions } = useContext(Context);
+	let placeId = useParams();
 
 	return (
 		<div className="container-fluid px-0">
