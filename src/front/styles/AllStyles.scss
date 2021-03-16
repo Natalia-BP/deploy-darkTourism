@@ -136,7 +136,6 @@ footer .indexList li:hover {
     filter: grayscale(0) brightness(1);
 }
 
-<<<<<<< HEAD
 // BOTONES LOGIN REDES SOCIALES
 .facebook{
     background-color: #3B5998;
@@ -169,9 +168,22 @@ footer .indexList li:hover {
   margin-right: 200px
 }
 // BOTONES LOGIN REDES SOCIALES
-=======
 //Carousel
 .carousel-inner{
     box-shadow: 10px 10px 25px #696969;
 }
->>>>>>> fdd98fc43965b81cffdeb5d5b6dbe885b4646127
+
+// ESTILOS SIGNUP
+#bgimg{
+    margin: 0;
+    padding: 0;
+    background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#formSignUp{
+    background: rgba(0,0,0,0.5);
+    width: 500px;
+}
+// FIN ESTILOS SIGNUP
