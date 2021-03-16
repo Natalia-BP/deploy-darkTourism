@@ -60,12 +60,12 @@ export const Navbar = () => {
 					</button>
 					<button className="dropdown-item" type="button">
 						<Link to="/Login" className="dropdown-item">
-							Login
+							Ingresar
 						</Link>
 					</button>
 					<button className="dropdown-item" type="button">
 						<Link to="/passwordrecover" className="dropdown-item">
-							PasswordRecover
+							Recuperar contraseña
 						</Link>
 					</button>
 				</div>
