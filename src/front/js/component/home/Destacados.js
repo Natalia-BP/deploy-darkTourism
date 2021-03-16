@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../../store/appContext";
+
 import "../../../styles/AllStyles.scss";
 import { Link } from "react-router-dom";
 
 export const Destacados = () => {
+	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		actions.fetchPlaces();
+	}, []);
 	return (
 		<div>
 			<div className="container pt-3">
@@ -10,44 +17,22 @@ export const Destacados = () => {
 				<p className="text-white SubTitlDest">Explora los siguientes lugares</p>
 				<div className="row justify-content-center">
 					<div />
-					<div className="col-auto">
-						<div>
-							<Link to="/infoplace">
-								<img
-									className="imgDest"
-									src="https://maritzacartin.files.wordpress.com/2019/02/img_8526-1.jpg?w=300"
-								/>
-							</Link>
-							<div>
-								<h6 className="text-white mt-2 mb-0">Sanatorio Duran</h6>
-								<p className="text-white locationDest fw-light">Cartago, Prusia</p>
-							</div>
-						</div>
-					</div>
-					<div className="col-auto">
-						<div>
-							<img
-								className="imgDest"
-								src="https://maritzacartin.files.wordpress.com/2019/02/img_8526-1.jpg?w=300"
-							/>
-							<div>
-								<h6 className="text-white mt-2 mb-0">Sanatorio Duran</h6>
-								<p className="text-white locationDest fw-light">Cartago, Prusia</p>
-							</div>
-						</div>
-					</div>
-					<div className="col-auto">
-						<div>
-							<img
-								className="imgDest"
-								src="https://maritzacartin.files.wordpress.com/2019/02/img_8526-1.jpg?w=300"
-							/>
-							<div>
-								<h6 className="text-white mt-2 mb-0">Sanatorio Duran</h6>
-								<p className="text-white locationDest fw-light">Cartago, Prusia</p>
-							</div>
-						</div>
-					</div>
+					{!!store.places &&
+						store.places.map(place => {
+							return (
+								<div className="col-auto" key={place.id}>
+									<div>
+										<Link to={`/infoplace/${place.id}`}>
+											<img className="imgDest" src={place.img} />
+										</Link>
+										<div>
+											<h6 className="text-white mt-2 mb-0">{place.name_place}</h6>
+											<p className="text-white locationDest fw-light">{place.location}</p>
+										</div>
+									</div>
+								</div>
+							);
+						})}
 				</div>
 			</div>
 		</div>

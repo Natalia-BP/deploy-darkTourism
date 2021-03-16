@@ -1,7 +1,11 @@
 import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
+
+//Componentes
 import { Context } from "../store/appContext";
 import { Comments } from "../component/place/Comments";
-// import { Jumbotron } from "../component/home/Jumbotron";
+import { FormComments } from "../component/place/FormComments";
 // import { DescripHome } from "../component/home/DescripHome";
 // import { ComingSoon } from "../component/home/ComingSoon";
 import { Carrusel } from "../component/place/Carrusel";
@@ -10,6 +14,7 @@ import { Map } from "../component/place/Map";
 
 export const InfoPlace = () => {
 	const { store, actions } = useContext(Context);
+	let placeId = useParams();
 
 	return (
 		<div className="container-fluid px-0">
@@ -23,8 +28,8 @@ export const InfoPlace = () => {
 			<Map />
 			<div className="container">
 				<Comments />
+				<FormComments />
 			</div>
-			<h1>Formulario de Comentarios</h1>
 		</div>
 	);
 };
