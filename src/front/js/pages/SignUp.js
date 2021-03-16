@@ -4,6 +4,8 @@ import React, { useState } from "react";
 //import { Context } from "../store/appContext";
 import { Redirect } from "react-router-dom";
 import "../../styles/AllStyles.scss";
+import LoginGoogle from "../component/modal_login/LoginGoogle";
+import LoginFacebook from "../component/modal_login/LoginFacebook";
 
 export const SignUp = () => {
 	const [email, setEmail] = useState("");
@@ -21,7 +23,11 @@ export const SignUp = () => {
 		// FETCH
 		const data = { email: email, password: pass, nick_name: nickName };
 
-		fetch("https://3001-fuchsia-ox-0aqrp8qt.ws-us03.gitpod.io/api/register", {
+<<<<<<< HEAD
+		fetch("https://3001-violet-dinosaur-liy0oqy0.ws-us03.gitpod.io/api/register", {
+=======
+		fetch("https://3001-red-owl-34j40oxe.ws-us03.gitpod.io/api/register", {
+>>>>>>> c4a4c354abbfeaadf2495d23af74ab1faab5aad5
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -39,48 +45,52 @@ export const SignUp = () => {
 	};
 
 	return (
-		<div>
-			<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
-				<div className="row">
-					<h1>Sign Up </h1>
-					<br />
+		<div id="bgimg">
+			<div id="formSignUp">
+				<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
+					<div className="row">
+						<h1 className="text-white mt-5">Sign Up </h1>
+						<br />
+					</div>
 				</div>
-			</div>
-			<div className="text-center mt-5 d-flex justify-content-center align-items-center">
-				<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
-					<div className="form-floating mb-3">
-						<input
-							type="email"
-							className="form-control"
-							id="floatingInput"
-							placeholder="nombre@dominio.com"
-							onChange={e => setEmail(e.target.value)}
-						/>
-						<label htmlFor="floatingInput">Dirección de correo electrónico</label>
-					</div>
-					<div className="form-floating">
-						<input
-							type="password"
-							className="form-control"
-							id="floatingPassword"
-							placeholder="Contraseña"
-							onChange={e => setPass(e.target.value)}
-						/>
-						<label htmlFor="floatingPassword">Contraseña</label>
-					</div>
-					<div className="form-floating mb-3">
-						<input
-							type="text"
-							className="form-control"
-							id="floatingName"
-							placeholder="Espantado"
-							onChange={e => setNickName(e.target.value)}
-						/>
-						<label htmlFor="floatingInput">NickName</label>
-					</div>
-					<input type="submit" className="btn btn-primary" value="Registrarse" />
-				</form>
-				{redirect ? <Redirect to="/" /> : ""}
+				<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
+					<LoginGoogle />
+					<LoginFacebook />
+				</div>
+				<br />
+				<div className="text-center mt-3 d-flex justify-content-center align-items-center">
+					<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
+						<div className="form-floating mb-3">
+							<input
+								type="email"
+								className="form-control"
+								id="floatingInput"
+								placeholder="nombre@dominio.com"
+								onChange={e => setEmail(e.target.value)}
+							/>
+						</div>
+						<div className="form-floating mb-3">
+							<input
+								type="password"
+								className="form-control"
+								id="floatingPassword"
+								placeholder="Contraseña"
+								onChange={e => setPass(e.target.value)}
+							/>
+						</div>
+						<div className="form-floating mb-3">
+							<input
+								type="text"
+								className="form-control"
+								id="floatingName"
+								placeholder="NickName"
+								onChange={e => setNickName(e.target.value)}
+							/>
+						</div>
+						<input type="submit" className="btn btn-primary mb-5" value="Registrarse" />
+					</form>
+				</div>
+				{redirect ? <Redirect to="/login" /> : ""}
 			</div>
 		</div>
 	);
