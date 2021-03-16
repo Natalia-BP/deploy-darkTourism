@@ -45,11 +45,11 @@ export const SignUp = () => {
 			<div id="formSignUp">
 				<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
 					<div className="row">
-						<h1 className="text-white">Sign Up </h1>
+						<h1 className="text-white mt-5">Sign Up </h1>
 						<br />
 					</div>
 				</div>
-				<div className="container text-center mt-3 d-flex justify-content-center align-items-center">
+				<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
 					<LoginGoogle />
 					<LoginFacebook />
 				</div>

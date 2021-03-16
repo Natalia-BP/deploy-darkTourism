@@ -6,7 +6,7 @@ import { Home } from "./pages/Home";
 import { InfoPlace } from "./pages/InfoPlace";
 import { SignUp } from "./pages/SignUp";
 import injectContext from "./store/appContext";
-import { PasswordRecover } from "./pages/PasswordRecover";
+import PasswordRecover from "./pages/PasswordRecover";
 import { Carrusel } from "./component/place/Carrusel";
 
 import { Navbar } from "./component/componentes_fijos/Navbar";

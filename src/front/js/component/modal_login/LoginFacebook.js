@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "../../../styles/AllStyles.scss";
 import FacebookLogin from "react-facebook-login";
+import { Redirect } from "react-router-dom";
 
 function LoginFacebook() {
+	const [redirect, setRedirect] = useState(false);
 	const responseFacebook = response => {
+		sessionStorage.setItem("token", response.accessToken);
+		setRedirect(true);
 		console.log(response);
 	};
 
@@ -45,6 +49,7 @@ function LoginFacebook() {
 				icon={"fab fa-facebook"}
 				cssClass="facebook"
 			/>
+			{redirect ? <Redirect to="/" /> : ""}
 		</div>
 	);
 }
