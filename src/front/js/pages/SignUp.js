@@ -23,7 +23,11 @@ export const SignUp = () => {
 		// FETCH
 		const data = { email: email, password: pass, nick_name: nickName };
 
+<<<<<<< HEAD
+		fetch("https://3001-violet-dinosaur-liy0oqy0.ws-us03.gitpod.io/api/register", {
+=======
 		fetch("https://3001-red-owl-34j40oxe.ws-us03.gitpod.io/api/register", {
+>>>>>>> c4a4c354abbfeaadf2495d23af74ab1faab5aad5
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
