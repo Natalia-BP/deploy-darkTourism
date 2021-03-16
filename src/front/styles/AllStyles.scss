@@ -92,11 +92,24 @@ footer .indexList li:hover {
    background-color: rgba(255, 255, 255, 0.3);
    color: inherit;
 }
-
-// hr {
-//     border: 1.2px solid white;
-// }
 /* //Comments InfoPlace Nati BP */
+
+/*Formulario Comments InfoPlace Nati BP*/
+.userRating {
+    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse el formulario
+    color: white;
+}
+
+.userRating .btn {
+    background-color: rgb(14, 223, 125);
+    color: inherit;
+}
+
+.btn:hover {
+    background-color: rgb(11, 196, 109);
+    color: inherit;
+}
+/* //Formulario Comments InfoPlace Nati BP */
 
 // clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
 .bg-image{

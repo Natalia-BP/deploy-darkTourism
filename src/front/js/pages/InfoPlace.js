@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Comments } from "../component/place/Comments";
-// import { Jumbotron } from "../component/home/Jumbotron";
+import { FormComments } from "../component/place/FormComments";
 // import { DescripHome } from "../component/home/DescripHome";
 // import { ComingSoon } from "../component/home/ComingSoon";
 
@@ -15,8 +15,8 @@ export const InfoPlace = () => {
 			<h1>Mapa</h1>
 			<div className="container">
 				<Comments />
+				<FormComments />
 			</div>
-			<h1>Formulario de Comentarios</h1>
 		</div>
 	);
 };
