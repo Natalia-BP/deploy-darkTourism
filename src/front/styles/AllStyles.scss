@@ -172,6 +172,42 @@ footer .indexList li:hover {
 .carousel-inner{
     box-shadow: 10px 10px 25px #696969;
 }
+.carousel.slide{
+    margin-bottom: 10rem;
+    width: 80%;
+    margin-left: 6rem;
+
+}
+
+//DescripPlace
+.text-description{
+    grid-row: 1;
+    grid-column: 2 / span 4;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.descrip_place.background{
+    background-color: rgb(158, 163, 189);
+    border-radius: 5px;
+}
+.descrip_place.back{
+    grid-row: 1;
+    grid-column: 9 / -1;
+    z-index: 1;
+    padding-top: 8rem;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+
+}
+.descrip_place.front{
+    grid-row: 1;
+    grid-column: 8 / span 3;
+    z-index: 2;
+    position: relative;
+    bottom: 2rem;
+}
 
 // ESTILOS SIGNUP
 #bgimg{
