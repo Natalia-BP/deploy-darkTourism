@@ -44,6 +44,12 @@ class Place(db.Model):
             "description": self.description,
             "location": self.location
         }
+    def serializeimg(self):
+        return {
+            "id": self.id,
+            "name_place": self.name_place,
+            "img": self.img
+        }
    
 class Favorite_Place(db.Model):
     __tablename__ = "favorite_place"
@@ -78,5 +84,6 @@ class Scores(db.Model):
             "id": self.id,
             "user_id": self.user_id,
             "place_id" : self.place_id,
-            "score": self.score
+            "score": self.score,
+            "review_comments": self.score
         } 
