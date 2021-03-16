@@ -17,7 +17,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			nike_name: "nike name",
 			token: null,
-			places: null
+			places: null,
+			currentplace: null
 			//user_id: null
 		},
 		actions: {
@@ -60,6 +61,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						setStore({ places: data });
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+			fetchPlacesbyId: id => {
+				fetch(`${process.env.BACKEND_URL}/api/place/${id}`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ currentplace: data });
 					})
 					.catch(error => {
 						console.error("Error:", error);

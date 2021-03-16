@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -18,13 +18,10 @@ export const InfoPlace = () => {
 
 	return (
 		<div className="container-fluid px-0">
-			<h1>Carrusel</h1>
 			<div className="container">
 				<Carrusel />
 			</div>
-			<h1>Descripción del lugar</h1>
 			<DescripPlace />
-			<h1>Mapa</h1>
 			<Map />
 			<div className="container">
 				<Comments />

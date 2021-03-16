@@ -141,7 +141,7 @@ def create_user():
 @api.route('/place', methods=['GET'])
 def get_all_place():
     all_place = Place.query.all()
-    all_place = list(map(lambda place: place.serialize(),all_place))
+    all_place = list(map(lambda place: place.serializeimg(),all_place))
     return jsonify(all_place)
 
 # GET ID 

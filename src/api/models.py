@@ -48,7 +48,8 @@ class Place(db.Model):
         return {
             "id": self.id,
             "name_place": self.name_place,
-            "img": self.img
+            "img": self.img,
+            "location": self.location
         }
    
 class Favorite_Place(db.Model):
