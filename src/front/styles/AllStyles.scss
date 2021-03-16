@@ -94,6 +94,18 @@ footer .indexList li:hover {
 }
 /* //Comments InfoPlace Nati BP */
 
+/* Star Rating InfoPlace Nati BP*/
+.starIcon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.starLine {
+    display: flex;
+    flex-direction: row;
+}
+/* //Star Rating InfoPlace InfoPlace Nati BP*/
+
 /*Formulario Comments InfoPlace Nati BP*/
 .userRating {
     background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse el formulario
@@ -120,7 +132,7 @@ footer .indexList li:hover {
     width: 80px;
 }
 
-//ComignSoon
+//ComingSoon
 * {
   box-sizing: border-box;
 }

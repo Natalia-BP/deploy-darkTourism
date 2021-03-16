@@ -1,4 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import PropTypes from "prop-types";
+
+//Componentes
 import { Context } from "../store/appContext";
 import { Comments } from "../component/place/Comments";
 import { FormComments } from "../component/place/FormComments";
