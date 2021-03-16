@@ -7,7 +7,7 @@ export const Destacados = () => {
 		<div>
 			<div className="container pt-3">
 				<h5 className="text-white mb-1 TitlDest">Destacados del mes</h5>
-				<p className="text-white SubTitlDest">Hemos elegido estos lugares para ti</p>
+				<p className="text-white SubTitlDest">Explora los siguientes lugares</p>
 				<div className="row justify-content-center">
 					<div />
 					<div className="col-auto">
