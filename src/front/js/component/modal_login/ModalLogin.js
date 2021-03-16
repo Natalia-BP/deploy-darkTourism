@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
 import { Redirect } from "react-router-dom";
+import LoginGoogle from "../modal_login/LoginGoogle";
+import LoginFacebook from "../modal_login/LoginFacebook";
 
 export const ModalLogin = () => {
 	const { store, actions } = useContext(Context);
@@ -44,13 +46,20 @@ export const ModalLogin = () => {
 		<>
 			<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
 				<div className="row">
-					<h1>Ingrese a su cuenta para comentar</h1>
+					<h1>Login</h1>
 					<br />
 				</div>
 			</div>
-			<div className="text-center mt-5 d-flex justify-content-center align-items-center">
+			<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
+				<LoginGoogle />
+				<LoginFacebook />
+			</div>
+			<br />
+			<h6 id="or">Or use your email</h6>
+			<div className="text-center mt-3 d-flex justify-content-center align-items-center">
 				<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
 					<div className="form-floating mb-3">
+						<i className="fas fa-envelope" />
 						<input
 							type="email"
 							className="form-control"
@@ -58,9 +67,10 @@ export const ModalLogin = () => {
 							placeholder="nombre@dominio.com"
 							onChange={e => setEmail(e.target.value)}
 						/>
-						<label htmlFor="floatingInput">Dirección de correo electrónico</label>
+						{/* <label htmlFor="floatingInput">Dirección de correo electrónico</label> */}
 					</div>
 					<div className="form-floating">
+						<i className="fas fa-lock" />
 						<input
 							type="password"
 							className="form-control"
@@ -68,9 +78,9 @@ export const ModalLogin = () => {
 							placeholder="Contraseña"
 							onChange={e => setPass(e.target.value)}
 						/>
-						<label htmlFor="floatingPassword">Contraseña</label>
+						{/* <label htmlFor="floatingPassword">Contraseña</label> */}
 					</div>
-					<input type="submit" className="btn btn-primary" value="Login" />
+					<input type="submit" className="btn btn-primary mt-3 mb-3" value="Login" />
 				</form>
 				{redirect ? <Redirect to="/" /> : ""}
 			</div>
