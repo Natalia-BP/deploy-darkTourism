@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 // INICIO ESTILO DESTACADOS
 .fondoDestacados{
     background-color: #323C73;
@@ -158,3 +161,117 @@ footer .indexList li:hover {
 .row .column img:hover{
     filter: grayscale(0) brightness(1);
 }
+
+// BOTONES LOGIN REDES SOCIALES
+.facebook{
+    background-color: #3B5998;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+    height: 45px;
+    font-size: 14px;
+}
+
+.facebook:hover {
+  background-color: #4e71ba;
+}
+
+#or {
+  display: flex;
+  flex-direction: row;
+}
+#or:before, #or:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+#or:before {
+  margin-left: 200px;
+  margin-right: 30px
+}
+#or:after {
+  margin-left: 30px;
+  margin-right: 200px
+}
+// BOTONES LOGIN REDES SOCIALES
+//Carousel
+.carousel-inner{
+    box-shadow: 10px 10px 25px #696969;
+}
+.carousel.slide{
+    margin-bottom: 10rem;
+    width: 80%;
+    margin-left: 6rem;
+
+}
+
+//DescripPlace
+.text-description{
+    grid-row: 1;
+    grid-column: 2 / span 4;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.descrip_place.background{
+    background-color: rgb(158, 163, 189);
+    border-radius: 5px;
+}
+.descrip_place.back{
+    grid-row: 1;
+    grid-column: 9 / -1;
+    z-index: 1;
+    padding-top: 8rem;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+
+}
+.descrip_place.front{
+    grid-row: 1;
+    grid-column: 8 / span 3;
+    z-index: 2;
+    position: relative;
+    bottom: 2rem;
+}
+
+// ESTILOS SIGNUP
+#bgimg{
+    margin: 0;
+    padding: 0;
+    background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80);
+    background-size: cover;
+    height: auto;
+}
+
+#formSignUp{
+    margin: auto;
+    width: 500px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+// FIN ESTILOS SIGNUP
+
+// ESTILOS PASSWORD RECOVERY
+.bg-pass{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://static.brusheezy.com/system/resources/previews/000/013/939/original/grunge-texture-by-krist-photoshop-textures.jpg);
+    background-size: cover;
+}
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+// FIN ESTILOS PASSWORD RECOVERY

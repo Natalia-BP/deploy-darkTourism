@@ -47,12 +47,12 @@ def register():
         nickname = request.json.get("nick_name")
 
         if not email:
-            return jsonify({"Mensaje":"email es requerido"}), 400
+            return jsonify({"Msg":"email es requerido"}), 400
         if not password:
-            return jsonify({"Mensaje":"password es requerido"}), 400
+            return jsonify({"Msg":"password es requerido"}), 400
         user = User.query.filter_by(email=email).first()
         if user: 
-            return jsonify({"Mensaje":"Usuario ya registrado"}), 400
+            return jsonify({"Msg":"Usuario ya registrado"}), 400
 
         user = User()
         user.email = email
@@ -64,7 +64,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        return jsonify({"Mensaje": "Gracias por registrarse"}), 200
+        return jsonify({"Msg": "Gracias por registrarse"}), 200
         
 
 #Login
