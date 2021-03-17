@@ -1,22 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext } from "react";
+import { Context } from "../../store/appContext";
 
 export const DescripPlace = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="container descrip_place background">
 			<div className="stackImgs">
 				<div className="text-description">
-					<h2 className="mb-3">Sanatorio Durán</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat.
-					</p>
-					<i className="fas fa-star" />
-					<i className="far fa-star" />
-					<i className="far fa-star" />
-					<i className="far fa-star" />
-					<i className="far fa-star" />
+					<h2 className="mb-3">{!!store.currentplace && store.currentplace.name_place}</h2>
+					<p>{!!store.currentplace && store.currentplace.description}</p>
+					{/* {!!store.currentplace && store.currentplace.average_stars} */}
 				</div>
 				<div className="descrip_place front">
 					<img

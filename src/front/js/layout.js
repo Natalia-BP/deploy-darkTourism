@@ -7,7 +7,6 @@ import { InfoPlace } from "./pages/InfoPlace";
 import { SignUp } from "./pages/SignUp";
 import injectContext from "./store/appContext";
 import PasswordRecover from "./pages/PasswordRecover";
-import { Carrusel } from "./component/place/Carrusel";
 
 import { Navbar } from "./component/componentes_fijos/Navbar";
 import { Footer } from "./component/componentes_fijos/Footer";
@@ -21,7 +20,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column h-100">
+		<div className="containerAll d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
@@ -29,7 +28,7 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/infoplace/:place_id">
+						<Route exact path="/infoplace/:id">
 							<InfoPlace />
 						</Route>
 						<Route exact path="/signup">

@@ -20,7 +20,7 @@ export const ModalLogin = () => {
 		// FETCH
 		const data = { email: email, password: pass };
 
-		fetch("https://3001-violet-dinosaur-liy0oqy0.ws-us03.gitpod.io/api/login", {
+		fetch(process.env.BACKEND_URL + "/api/login", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

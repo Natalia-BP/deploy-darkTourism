@@ -5,19 +5,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			places: null,
 			redirect_logout: false,
-			user_id: null,
-			scores: [{}]
+			user_id: null
 		},
 		actions: {
-			getMessage: () => {
-				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello")
-					.then(resp => resp.json())
-					.then(data => setStore({ message: data.message }))
-					.catch(error => console.log("Error loading message from backend", error));
-			},
-
-			//User Login-Logout
+			// Use getActions to call a function within a fuction
 			login: () => {
 				setStore({
 					nike_name: sessionStorage.getItem("nike_name"),
@@ -60,7 +51,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("Error:", error);
 					});
 			},
-
 			fetchPlacesbyId: id => {
 				fetch(`${process.env.BACKEND_URL}/api/place/${id}`)
 					.then(response => response.json())
@@ -70,6 +60,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.error("Error:", error);
 					});
+			},
+
+			logout: () => {
+				setStore({
+					redirect_logout: true,
+					token: null,
+					nick_name: "nick_name",
+					user_id: null
+				});
+				sessionStorage.removeItem("u_token");
+				sessionStorage.removeItem("nick_name");
+				sessionStorage.removeItem("user_id");
 			}
 		}
 	};
