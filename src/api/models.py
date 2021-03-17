@@ -10,7 +10,7 @@ class User(db.Model):
     password = db.Column(db.String(255), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     favorite_place= db.relationship("Favorite_Place", backref="user", cascade="all, delete")
-    scores = db.relationship("Scores")
+    scores = db.relationship("Scores", backref="user")
 
     def __repr__(self):
         return '<User %r, %r, %r>' % (self.id, self.nickname, self.email)
@@ -42,13 +42,15 @@ class Place(db.Model):
             "img": self.img,
             "name_place": self.name_place,
             "description": self.description,
-            "location": self.location
+            "location": self.location,
+            "scores": list(map(lambda score:score.serialize(),self.scores))
         }
     def serializeimg(self):
         return {
             "id": self.id,
             "name_place": self.name_place,
-            "img": self.img
+            "img": self.img,
+            "location": self.location
         }
    
 class Favorite_Place(db.Model):
@@ -85,5 +87,10 @@ class Scores(db.Model):
             "user_id": self.user_id,
             "place_id" : self.place_id,
             "score": self.score,
-            "review_comments": self.score
+            "user": self.user.nickname,
+            "review_comments": self.review_comments
         } 
+    
+    def serialize2(self):
+        return self.score
+       

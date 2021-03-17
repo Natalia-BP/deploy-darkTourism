@@ -141,7 +141,7 @@ def create_user():
 @api.route('/place', methods=['GET'])
 def get_all_place():
     all_place = Place.query.all()
-    all_place = list(map(lambda place: place.serialize(),all_place))
+    all_place = list(map(lambda place: place.serializeimg(),all_place))
     return jsonify(all_place)
 
 # GET ID 
@@ -151,7 +151,16 @@ def get_place(id):
     if not place:
         return jsonify({"msg":"place no encontrado"})
     place = place.serialize()
-    #scores.query.filter_by_place_id//se podria insertar directamente!!
+
+    scores = Scores.query.filter_by(place_id=id).all()
+    scores_serializados = list(map(lambda score: score.serialize2(),scores))
+    print(scores_serializados)
+    promedio = 0
+    for score in scores_serializados:
+        promedio += score
+    promedio = promedio / len(scores_serializados)
+    print(promedio)
+    place["average_stars"]=promedio
     return jsonify(place)
 
 # POST 
@@ -210,6 +219,7 @@ def get_name_place(name_place):
 # POST score (Naty)  
 @api.route('/score', methods=['POST'])
 def create_score():
+    user_id= request.json.get('user_id')
     place_id= request.json.get('place_id')
     score = request.json.get('score')
     review_comments= request.json.get('review_comments')
@@ -218,6 +228,7 @@ def create_score():
         return jsonify({"msg": "El comentario no puede estar vacio"}), 400
 
     new_score = Scores()
+    new_score.user_id = user_id
     new_score.place_id = place_id
     new_score.score = score
     new_score.review_comments = review_comments
