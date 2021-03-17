@@ -1,9 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useContext, useState } from "react";
 
-export const FormComments = () => {
+export const FormComments = props => {
 	// use state en el valor de text area y estrellas
 	//function para onSubmit de la forma
+
+	//Logica textArea
+	const [comment, setComment] = useState(<textarea />);
+
+	const handleSubmit = event => {
+		event.preventDefault();
+		//where?.push(comment);
+	};
 
 	//Logica de estrellas(se pasa por props a los otros componentes)
 	const [rating, setRating] = React.useState(0);
@@ -74,7 +83,7 @@ export const FormComments = () => {
 	};
 	return (
 		<>
-			<form className="userRating col-md-6 p-0 my-4">
+			<form className="userRating col-md-6 p-0 my-4" onSubmit={handleSubmit}>
 				<h4 className="text-center text-md-left mb-3">Ingresa tu review</h4>
 				<div className="form-group my-5">
 					<div className="form-row justify-content-center justify-content-md-start">
@@ -114,4 +123,8 @@ export const FormComments = () => {
 			<div style={{ color: "red" }}>{JSON.stringify(rating)}</div>
 		</>
 	);
+};
+FormComments.propTypes = {
+	place_id: PropTypes.number,
+	user_id: PropTypes.number
 };
