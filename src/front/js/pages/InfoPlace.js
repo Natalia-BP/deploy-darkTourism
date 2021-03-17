@@ -16,7 +16,7 @@ export const InfoPlace = () => {
 	let placeId = useParams();
 
 	return (
-		<div className="container-fluid px-0">
+		<div className="container-fluid px-0 mt-5">
 			<h1>Carrusel</h1>
 			<div className="container">
 				<Carrusel />
