@@ -7,7 +7,6 @@ import { InfoPlace } from "./pages/InfoPlace";
 import { SignUp } from "./pages/SignUp";
 import injectContext from "./store/appContext";
 import PasswordRecover from "./pages/PasswordRecover";
-import { Carrusel } from "./component/place/Carrusel";
 
 import { Navbar } from "./component/componentes_fijos/Navbar";
 import { Footer } from "./component/componentes_fijos/Footer";
@@ -29,7 +28,7 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/infoplace/:place_id">
+						<Route exact path="/infoplace/:id">
 							<InfoPlace />
 						</Route>
 						<Route exact path="/signup">

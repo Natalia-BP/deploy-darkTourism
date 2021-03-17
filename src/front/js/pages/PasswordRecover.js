@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const PasswordRecover = () => {
 	return (
-		<div className="bg-pass">
+		<div className="bg-pass vh-100">
 			<div className="box">
 				<h2>Recuperar contraseña</h2>
 				<form>
