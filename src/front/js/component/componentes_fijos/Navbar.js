@@ -6,7 +6,6 @@ import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-
 	return (
 		<nav className="navbar navbar-expand-md justify-content-between">
 			<div className="container-fluid">
