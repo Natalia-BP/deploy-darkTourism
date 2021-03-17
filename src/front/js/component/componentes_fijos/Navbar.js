@@ -6,7 +6,6 @@ import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-	// console.log(nick_name);
 	return (
 		<nav className="navbar navbar-expand-md justify-content-between">
 			<div className="container-fluid">
@@ -34,47 +33,46 @@ export const Navbar = () => {
 						<img src={Logo} className="img-fluid" width="35px" />
 					</Link>
 				</div>
-			</div>
-			<div>
-				<i className="fas fa-heart" />
-			</div>
-			<div />
-			<div className="btn-group">
-				<button
-					type="button"
-					className="btn btn-light dropdown-toggle"
-					data-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false">
-					<i className="far fa-user-circle" />
-				</button>
-				<div className="dropdown-menu dropdown-menu-right">
-					<button className="dropdown-item" type="button">
-						<Link to="/signup" className="dropdown-item">
-							Registrarse
-						</Link>
-					</button>
-					<button className="dropdown-item" type="button">
-						<Link to="/Login" className="dropdown-item">
-							Ingresar
-						</Link>
-					</button>
-					<button className="dropdown-item" type="button">
-						<Link to="/passwordrecover" className="dropdown-item">
-							Recuperar contraseña
-						</Link>
-					</button>
-					<button className="dropdown-item" type="button">
-						Usuario: {store.actual_user && `${nick_name}`}
-						<div
-							className="dropdown-item"
-							onClick={() => {
-								actions.logout();
-							}}>
-							Logout
-						</div>
-						{store.redirect_logout ? <Redirect to="/" /> : null}
-					</button>
+				<div className="navbar-collapse collapse dual-nav w-50 order-2">
+					<ul className="nav navbar-nav ml-auto">
+						<li className="nav-item">
+							<a className="nav-link">
+								<i className="fas fa-heart" />
+							</a>
+						</li>
+						<li className="nav-item dropdown">
+							<a className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+								<i className="far fa-user-circle" />
+							</a>
+							<div className="dropdown-menu dropdown-menu-right" href="">
+								<a className="dropdown-item" type="button">
+									<Link to="/signup" className="dropdown-item">
+										Registrarse
+									</Link>
+								</a>
+								<a className="dropdown-item" type="button">
+									<Link to="/Login" className="dropdown-item">
+										Ingresar
+									</Link>
+								</a>
+								<a className="dropdown-item" type="button">
+									<Link to="/passwordrecover" className="dropdown-item">
+										Recuperar contraseña
+									</Link>
+								</a>
+								<a className="dropdown-item" type="button">
+									<div
+										className="dropdown-item"
+										onClick={() => {
+											actions.logout();
+										}}>
+										Logout
+									</div>
+									{store.redirect_logout ? <Redirect to="/" /> : null}
+								</a>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</nav>
