@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../img/Logo.png";
+import { Redirect } from "react-router-dom";
+import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+	// console.log(nick_name);
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light">
 			<button
@@ -15,6 +19,7 @@ export const Navbar = () => {
 				aria-label="Toggle navigation">
 				<span className="navbar-toggler-icon" />
 			</button>
+
 			<div className="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul className="navbar-nav">
 					<li className="nav-item active">
@@ -67,6 +72,17 @@ export const Navbar = () => {
 						<Link to="/passwordrecover" className="dropdown-item">
 							Recuperar contraseña
 						</Link>
+					</button>
+					<button className="dropdown-item" type="button">
+						Usuario: {store.actual_user && `${nick_name}`}
+						<div
+							className="dropdown-item"
+							onClick={() => {
+								actions.logout();
+							}}>
+							Logout
+						</div>
+						{store.redirect_logout ? <Redirect to="/" /> : null}
 					</button>
 				</div>
 			</div>
