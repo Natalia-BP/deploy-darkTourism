@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../img/Logo.png";
+import { Redirect } from "react-router-dom";
+import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
-	//holi plis dejeme hacer merge, chas gracias
+
+=======
+	const { store, actions } = useContext(Context);
+
 	return (
-		<nav className="navbar navbar-expand-md justify-content-between">
+<nav className="navbar navbar-expand-md justify-content-between">
 			<div className="container-fluid">
 				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
 					<span className="navbar-toggler-icon" />

@@ -10,6 +10,7 @@ import { FormComments } from "../component/place/FormComments";
 // import { ComingSoon } from "../component/home/ComingSoon";
 import { Carrusel } from "../component/place/Carrusel";
 import { DescripPlace } from "../component/place/DescripPlace";
+import { Map } from "../component/place/Map";
 
 export const InfoPlace = () => {
 	const { store, actions } = useContext(Context);
@@ -24,6 +25,7 @@ export const InfoPlace = () => {
 			<h1>Descripción del lugar</h1>
 			<DescripPlace />
 			<h1>Mapa</h1>
+			<Map />
 			<div className="container">
 				<Comments />
 				<FormComments />
