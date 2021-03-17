@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../../img/Logo.png";
 
 export const Navbar = () => {
+	//holi plis dejeme hacer merge, chas gracias
 	return (
 		<nav className="navbar navbar-expand-md justify-content-between">
 			<div className="container-fluid">
