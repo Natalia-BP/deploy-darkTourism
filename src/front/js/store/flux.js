@@ -66,6 +66,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("Error:", error);
 					});
 			},
+			fetchPlacesbyId: id => {
+				fetch(`${process.env.BACKEND_URL}/api/place/${id}`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ currentplace: data });
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
 
 			logout: () => {
 				setStore({
