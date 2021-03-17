@@ -66,17 +66,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("Error:", error);
 					});
 			},
-<<<<<<< HEAD
-			fetchPlacesbyId: id => {
-				fetch(`${process.env.BACKEND_URL}/api/place/${id}`)
-					.then(response => response.json())
-					.then(data => {
-						setStore({ currentplace: data });
-					})
-					.catch(error => {
-						console.error("Error:", error);
-					});
-=======
 
 			logout: () => {
 				setStore({
@@ -88,7 +77,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				sessionStorage.removeItem("u_token");
 				sessionStorage.removeItem("nick_name");
 				sessionStorage.removeItem("user_id");
->>>>>>> 67743e9ee6b8d264142e06b1633b20e3584b009f
 			}
 		}
 	};
