@@ -8,6 +8,7 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	// console.log(nick_name);
 	return (
+<<<<<<< HEAD
 		<nav className="navbar navbar-expand-lg navbar-light">
 			<button
 				className="navbar-toggler"
@@ -39,10 +40,35 @@ export const Navbar = () => {
 					</li>
 				</ul>
 				<div className="nav-logo mx-auto">
+=======
+		<nav className="navbar navbar-expand-md justify-content-between">
+			<div className="container-fluid">
+				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+					<span className="navbar-toggler-icon" />
+				</button>
+				<div className="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+					<ul className="navbar-nav">
+						<li className="nav-item active mr-2">
+							<a className="nav-link text-reset" href="#">
+								<Link className="linkTag" to="/">
+									Home <span className="sr-only">Home</span>
+								</Link>
+							</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link text-reset" href="#">
+								Link
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div className="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25">
+>>>>>>> 89f5027309359fc8715838238d664a065a4aad1b
 					<Link to="/">
-						<img src={Logo} width="25px" />
+						<img src={Logo} className="img-fluid" width="35px" />
 					</Link>
 				</div>
+<<<<<<< HEAD
 			</div>
 			<div>
 				<i className="fas fa-heart" />
@@ -84,6 +110,38 @@ export const Navbar = () => {
 						</div>
 						{store.redirect_logout ? <Redirect to="/" /> : null}
 					</button>
+=======
+				<div className="navbar-collapse collapse dual-nav w-50 order-2">
+					<ul className="nav navbar-nav ml-auto">
+						<li className="nav-item">
+							<a className="nav-link">
+								<i className="fas fa-heart" />
+							</a>
+						</li>
+						<li className="nav-item dropdown">
+							<a className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+								<i className="far fa-user-circle" />
+							</a>
+							<div className="dropdown-menu dropdown-menu-right" href="">
+								<a className="dropdown-item" type="button">
+									<Link to="/signup" className="dropdown-item">
+										Registrarse
+									</Link>
+								</a>
+								<a className="dropdown-item" type="button">
+									<Link to="/Login" className="dropdown-item">
+										Ingresar
+									</Link>
+								</a>
+								<a className="dropdown-item" type="button">
+									<Link to="/passwordrecover" className="dropdown-item">
+										Recuperar contraseña
+									</Link>
+								</a>
+							</div>
+						</li>
+					</ul>
+>>>>>>> 89f5027309359fc8715838238d664a065a4aad1b
 				</div>
 			</div>
 		</nav>
