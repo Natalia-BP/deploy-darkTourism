@@ -61,6 +61,16 @@ export const Navbar = () => {
 										Recuperar contraseña
 									</Link>
 								</a>
+								<a className="dropdown-item" type="button">
+									<div
+										className="dropdown-item"
+										onClick={() => {
+											actions.logout();
+										}}>
+										Logout
+									</div>
+									{store.redirect_logout ? <Redirect to="/" /> : null}
+								</a>
 							</div>
 						</li>
 					</ul>
