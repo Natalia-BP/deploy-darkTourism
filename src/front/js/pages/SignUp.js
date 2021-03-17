@@ -42,10 +42,10 @@ export const SignUp = () => {
 
 	return (
 		<div id="bgimg">
-			<div id="formSignUp">
+			<div id="formSignUp" className="mt-5">
 				<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
 					<div className="row">
-						<h1 className="text-white mt-5">Sign Up </h1>
+						<h1 className="text-white mt-5">Crea una cuenta</h1>
 						<br />
 					</div>
 				</div>
