@@ -23,7 +23,7 @@ export const SignUp = () => {
 		// FETCH
 		const data = { email: email, password: pass, nick_name: nickName };
 
-		fetch(process.env.BACKEND_URL + "api/register", {
+		fetch(process.env.BACKEND_URL + "/api/register", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

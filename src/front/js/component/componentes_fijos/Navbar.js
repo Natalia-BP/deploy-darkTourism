@@ -6,7 +6,6 @@ import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-
 	return (
 		<nav className="navbar navbar-expand-md justify-content-between">
 			<div className="container-fluid">
@@ -60,6 +59,16 @@ export const Navbar = () => {
 									<Link to="/passwordrecover" className="dropdown-item">
 										Recuperar contraseña
 									</Link>
+								</a>
+								<a className="dropdown-item" type="button">
+									<div
+										className="dropdown-item"
+										onClick={() => {
+											actions.logout();
+										}}>
+										Logout
+									</div>
+									{store.redirect_logout ? <Redirect to="/" /> : null}
 								</a>
 							</div>
 						</li>
