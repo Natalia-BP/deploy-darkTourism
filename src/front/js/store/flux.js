@@ -15,10 +15,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 
-			nike_name: "nike name",
+			nick_name: "nick_name",
 			token: null,
-			places: null
-			//user_id: null
+			places: null,
+			redirect_logout: false,
+			user_id: null
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -64,6 +65,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.error("Error:", error);
 					});
+			},
+
+			logout: () => {
+				setStore({
+					redirect_logout: true,
+					token: null,
+					nick_name: "nick_name",
+					user_id: null
+				});
+				sessionStorage.removeItem("u_token");
+				sessionStorage.removeItem("nick_name");
+				sessionStorage.removeItem("user_id");
 			}
 		}
 	};
