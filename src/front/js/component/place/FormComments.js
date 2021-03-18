@@ -1,23 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Context } from "../../store/appContext";
 import { useContext, useState } from "react";
 
 export const FormComments = props => {
+	const { store, actions } = useContext(Context);
 	// use state en el valor de text area y estrellas
 	//function para onSubmit de la forma
 
 	//Logica textArea
-	const [comment, setComment] = useState(<textarea />);
-
-	const handleSubmit = event => {
-		event.preventDefault();
-		//where?.push(comment);
-	};
-
-	//Logica de estrellas(se pasa por props a los otros componentes)
+	const [comment, setComment] = useState("");
 	const [rating, setRating] = React.useState(0);
 	const [hoverRating, setHoverRating] = React.useState(0);
 
+	const handleSubmit = event => {
+		event.preventDefault();
+		let data = {
+			//user_id: store.user_id,
+			user_id: 1,
+			place_id: store.currentplace.id,
+			score: rating,
+			review_comments: comment
+		};
+		actions.fetchPostReview(data);
+		actions.fetchPlacesbyId(store.currentplace.id);
+		window.location.reload();
+	};
+
+	//Logica de estrellas
 	const onMouseEnter = index => {
 		setHoverRating(index);
 	};
@@ -112,11 +122,12 @@ export const FormComments = props => {
 						id="textAreaComment"
 						rows="3"
 						placeholder="Escribe tu comentario aquí"
+						onChange={e => {
+							setComment(e.target.value);
+						}}
 					/>
 					<div className="form-row justify-content-center justify-content-md-end">
-						<button type="submit" className="btn rounded-pill">
-							Publicar
-						</button>
+						<button className="btn rounded-pill">Publicar</button>
 					</div>
 				</div>
 			</form>

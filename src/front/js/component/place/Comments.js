@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import profpic from "../../../img/prof_picPrueba.jpg";
 
-export const Comments = () => {
+export const Comments = props => {
 	return (
 		<>
 			<div className="userComments">
@@ -12,13 +12,13 @@ export const Comments = () => {
 							<img className="img-fluid rounded-circle mw-25" src={profpic} width="81px" />
 						</div>
 						<div className="username ml-3">
-							<h4>DonSata90</h4>
+							<h4>{props.user}</h4>
 						</div>
 					</div>
 					<hr className="bg-white rounded" />
 					<div className="body">
-						<p className="text-center text-md-left">Me encantó el sanatorio, muy feliz</p>
-						<div className="rating" />
+						<p className="text-center text-md-left">{props.review_comments}</p>
+						<div className="rating">Score: {props.score}</div>
 					</div>
 					<div className="footer text-right font-italic">
 						<p className="text-center text-md-right">Miérc. 10 de Marzo, 2021</p>

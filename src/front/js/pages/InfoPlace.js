@@ -25,7 +25,17 @@ export const InfoPlace = () => {
 			<DescripPlace />
 			<Map />
 			<div className="container">
-				<Comments />
+				{!!store.currentplace &&
+					store.currentplace.scores.map(elem => {
+						return (
+							<Comments
+								key={elem.id}
+								review_comments={elem.review_comments}
+								score={elem.score}
+								user={elem.user}
+							/>
+						);
+					})}
 				<FormComments />
 			</div>
 		</div>

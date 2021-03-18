@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			places: null,
 			redirect_logout: false,
-			user_id: null
+			user_id: null,
+			currentplace: null
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -30,13 +31,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			//User POST review
-			fetchPostReview: () => {
+			fetchPostReview: data => {
 				fetch(process.env.BACKEND_URL + "/api/score", {
-					method: "POST"
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(data)
 				})
 					.then(response => response.json())
 					.then(data => {
-						setStore({ scores: data });
+						console.log(data);
 					});
 			},
 
@@ -51,6 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("Error:", error);
 					});
 			},
+
 			fetchPlacesbyId: id => {
 				fetch(`${process.env.BACKEND_URL}/api/place/${id}`)
 					.then(response => response.json())

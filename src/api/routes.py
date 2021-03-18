@@ -130,10 +130,12 @@ def get_place(id):
     scores_serializados = list(map(lambda score: score.serialize2(),scores))
     print(scores_serializados)
     promedio = 0
-    for score in scores_serializados:
-        promedio += score
-    promedio = promedio / len(scores_serializados)
-    print(promedio)
+
+    if len(scores_serializados) > 0:
+        for score in scores_serializados:
+            promedio += score
+        promedio = promedio / len(scores_serializados)
+
     place["average_stars"]=promedio
     return jsonify(place)
 
@@ -213,29 +215,32 @@ def create_score():
     return jsonify({"msg": "Score and Comment creado exitosamente"}), 200
 
 #GET promedio de estrellas  :D  :D   ;D
-@api.route('/promedio', methods=['GET'])
-def get_promedio():
-    place_id = request.get_json()
-    place_id = place_id['place_id']
-    print("PLACE ID", place_id)
+# @api.route('/promedio', methods=['GET'])
+# def get_promedio():
+#     place_id = request.get_json()
+#     place_id = place_id['place_id']
+#     print("PLACE ID", place_id)
 
-    scores = Scores.query.filter_by(place_id=place_id).all()
-    print(scores)
-    scores_serializados = list(map(lambda place_id: place_id.serialize(),scores)) 
-    print(scores_serializados)
+#     scores = Scores.query.filter_by(place_id=place_id).all()
+#     print(scores)
+#     scores_serializados = list(map(lambda place_id: place_id.serialize(),scores)) 
+#     print(scores_serializados)
 
-    promedio = 0
-    for score in scores_serializados:
-        promedio += score['score']
-    promedio = promedio / len(scores_serializados)
-    print(promedio)
-    # modelar la info para mandar
-    data = {
-        'promedio': promedio,
-        'comentarios':list(map(lambda score: score['review_comments'], scores_serializados))
-    }
+#     promedio = 0
+#     if len(scores_serializados) > 0:
+#         for score in scores_serializados:
+#             promedio += score['score']
+#         promedio = promedio / len(scores_serializados)
     
-    return jsonify(data)
+        
+#     print(promedio)
+#     # modelar la info para mandar
+#     data = {
+#         'promedio': promedio,
+#         'comentarios':list(map(lambda score: score['review_comments'], scores_serializados))
+#     }
+    
+#     return jsonify(data)
  
 
 
