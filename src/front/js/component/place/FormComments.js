@@ -23,8 +23,6 @@ export const FormComments = props => {
 			review_comments: comment
 		};
 		actions.fetchPostReview(data);
-		actions.fetchPlacesbyId(store.currentplace.id);
-		window.location.reload();
 	};
 
 	//Logica de estrellas

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../img/Logo.png";
 import { Redirect } from "react-router-dom";
@@ -6,6 +6,11 @@ import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		actions.fetchGetFavorite();
+	}, []);
+
 	return (
 		<nav className="navbar navbar-expand-md justify-content-between">
 			<div className="container-fluid">
@@ -35,16 +40,33 @@ export const Navbar = () => {
 				</div>
 				<div className="navbar-collapse collapse dual-nav w-50 order-2">
 					<ul className="nav navbar-nav ml-auto">
-						<li className="nav-item">
-							<a className="nav-link">
+						<li className="nav-item dropdown">
+							<a className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
 								<i className="fas fa-heart" />
 							</a>
+							<div className="dropdown-menu dropdown-menu-right">
+								{/* {store.favorite_place.map((elem, index) => {
+									return <li key={index}>{elem.place_id}</li>;
+								})} */}
+
+								{!!store.favoritePlaces &&
+									store.favoritePlaces.favorite_place.map(elem => {
+										return (
+											<Link
+												key={elem.id}
+												to={`/infoplace/${elem.place_id}`}
+												className="dropdown-item">
+												{elem.place_name}
+											</Link>
+										);
+									})}
+							</div>
 						</li>
 						<li className="nav-item dropdown">
 							<a className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
 								<i className="far fa-user-circle" />
 							</a>
-							<div className="dropdown-menu dropdown-menu-right" href="">
+							<div className="dropdown-menu dropdown-menu-right">
 								<a className="dropdown-item" type="button">
 									<Link to="/signup" className="dropdown-item">
 										Registrarse

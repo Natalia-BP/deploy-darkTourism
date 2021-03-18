@@ -21,6 +21,7 @@ class User(db.Model):
             "email": self.email,
             "nickname" : self.nickname,
             "is_active" : self.is_active,
+            "favorite_place" : list(map(lambda fav_place: fav_place.serialize(),self.favorite_place))
         } 
 
 class Place(db.Model):
@@ -65,9 +66,9 @@ class Favorite_Place(db.Model):
     def serialize(self):
         return {       
             "id": self.id,
-            "name_place": self.user_id,
             "user_id": self.user_id,
-            "place_id" : self.place_id
+            "place_id" : self.place_id,
+            "place_name" : self.place.name_place
         } 
 
 class Scores(db.Model):

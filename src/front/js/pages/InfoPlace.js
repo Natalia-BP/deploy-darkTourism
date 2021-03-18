@@ -14,9 +14,12 @@ import { Map } from "../component/place/Map";
 export const InfoPlace = () => {
 	const { store, actions } = useContext(Context);
 	let placeId = useParams();
-	useEffect(() => {
-		actions.fetchPlacesbyId(placeId.id);
-	}, []);
+	useEffect(
+		() => {
+			actions.fetchPlacesbyId(placeId.id);
+		},
+		[placeId.id]
+	);
 	return (
 		<div className="container-fluid px-0">
 			<div className="container">
