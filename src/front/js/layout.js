@@ -7,6 +7,7 @@ import { InfoPlace } from "./pages/InfoPlace";
 import { SignUp } from "./pages/SignUp";
 import injectContext from "./store/appContext";
 import PasswordRecover from "./pages/PasswordRecover";
+import Reset from "./pages/Reset";
 
 import { Navbar } from "./component/componentes_fijos/Navbar";
 import { Footer } from "./component/componentes_fijos/Footer";
@@ -39,6 +40,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/passwordrecover">
 							<PasswordRecover />
+						</Route>
+						<Route exact path="/reset/:token">
+							<Reset />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
