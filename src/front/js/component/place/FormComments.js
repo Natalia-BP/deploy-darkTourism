@@ -1,14 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Context } from "../../store/appContext";
+import { useContext, useState } from "react";
 
-export const FormComments = () => {
+export const FormComments = props => {
+	const { store, actions } = useContext(Context);
 	// use state en el valor de text area y estrellas
 	//function para onSubmit de la forma
 
-	//Logica de estrellas(se pasa por props a los otros componentes)
+	//Logica textArea
+	const [comment, setComment] = useState("");
 	const [rating, setRating] = React.useState(0);
 	const [hoverRating, setHoverRating] = React.useState(0);
 
+	const handleSubmit = event => {
+		event.preventDefault();
+		let data = {
+			//user_id: store.user_id,
+			user_id: 1,
+			place_id: store.currentplace.id,
+			score: rating,
+			review_comments: comment
+		};
+		actions.fetchPostReview(data);
+	};
+
+	//Logica de estrellas
 	const onMouseEnter = index => {
 		setHoverRating(index);
 	};
@@ -74,7 +91,7 @@ export const FormComments = () => {
 	};
 	return (
 		<>
-			<form className="userRating col-md-6 p-0 my-4">
+			<form className="userRating col-md-6 p-0 my-4" onSubmit={handleSubmit}>
 				<h4 className="text-center text-md-left mb-3">Ingresa tu review</h4>
 				<div className="form-group my-5">
 					<div className="form-row justify-content-center justify-content-md-start">
@@ -103,15 +120,20 @@ export const FormComments = () => {
 						id="textAreaComment"
 						rows="3"
 						placeholder="Escribe tu comentario aquí"
+						onChange={e => {
+							setComment(e.target.value);
+						}}
 					/>
 					<div className="form-row justify-content-center justify-content-md-end">
-						<button type="submit" className="btn rounded-pill">
-							Publicar
-						</button>
+						<button className="btn rounded-pill">Publicar</button>
 					</div>
 				</div>
 			</form>
 			<div style={{ color: "red" }}>{JSON.stringify(rating)}</div>
 		</>
 	);
+};
+FormComments.propTypes = {
+	place_id: PropTypes.number,
+	user_id: PropTypes.number
 };

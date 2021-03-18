@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint, current_app
-from api.models import db, User, Place, Scores
+from api.models import db, User, Place, Scores, Favorite_Place
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 import datetime # se importo para que funcione el login (datetime(token))
@@ -13,32 +13,6 @@ from flask_mail import Message
 
 # mail = Mail(app)
 api = Blueprint('api', __name__)
-
-
-@api.route('/hello', methods=['POST', 'GET'])
-@api.route("/hello/<int:id>", methods=["GET"])
-def handle_hello(id=None):
-
-    if request.method == "GET":
-        if not id:
-            response_body = {
-                "message": "Hello! I'm a message that came from the backend GET"
-            }
-
-            return jsonify(response_body), 200
-        
-        response_body = {
-                "message": f"Hello! I'm a message that came from the backend GET {id}" 
-            }
-
-        return jsonify(response_body), 200
-
-    if request.method == "POST":
-        response_body = {
-            "message": "Hello! I'm a message that came from the backend POST"
-        }
-
-        return jsonify(response_body), 200
 
 
 # Registro
@@ -109,7 +83,7 @@ def get_all_user():
     all_user = list(map(lambda user: user.serialize(),all_user))
     return jsonify(all_user)
 
-# GET ID
+# GET USER BY ID
 @api.route('/user/<int:id>', methods=['GET'])
 def get_user(id):
     user = User.query.filter_by(id=id).first()
@@ -118,7 +92,7 @@ def get_user(id):
     user = user.serialize()
     return jsonify(user)
 
-#POST
+#POST USER
 @api.route('/user', methods=['POST'])
 def create_user():
     email = request.json.get('email')
@@ -160,10 +134,12 @@ def get_place(id):
     scores_serializados = list(map(lambda score: score.serialize2(),scores))
     print(scores_serializados)
     promedio = 0
-    for score in scores_serializados:
-        promedio += score
-    promedio = promedio / len(scores_serializados)
-    print(promedio)
+
+    if len(scores_serializados) > 0:
+        for score in scores_serializados:
+            promedio += score
+        promedio = promedio / len(scores_serializados)
+
     place["average_stars"]=promedio
     return jsonify(place)
 
@@ -243,29 +219,65 @@ def create_score():
     return jsonify({"msg": "Score and Comment creado exitosamente"}), 200
 
 #GET promedio de estrellas  :D  :D   ;D
-@api.route('/promedio', methods=['GET'])
-def get_promedio():
-    place_id = request.get_json()
-    place_id = place_id['place_id']
-    print("PLACE ID", place_id)
+# @api.route('/promedio', methods=['GET'])
+# def get_promedio():
+#     place_id = request.get_json()
+#     place_id = place_id['place_id']
+#     print("PLACE ID", place_id)
 
-    scores = Scores.query.filter_by(place_id=place_id).all()
-    print(scores)
-    scores_serializados = list(map(lambda place_id: place_id.serialize(),scores)) 
-    print(scores_serializados)
+#     scores = Scores.query.filter_by(place_id=place_id).all()
+#     print(scores)
+#     scores_serializados = list(map(lambda place_id: place_id.serialize(),scores)) 
+#     print(scores_serializados)
 
-    promedio = 0
-    for score in scores_serializados:
-        promedio += score['score']
-    promedio = promedio / len(scores_serializados)
-    print(promedio)
-    # modelar la info para mandar
-    data = {
-        'promedio': promedio,
-        'comentarios':list(map(lambda score: score['review_comments'], scores_serializados))
-    }
+#     promedio = 0
+#     if len(scores_serializados) > 0:
+#         for score in scores_serializados:
+#             promedio += score['score']
+#         promedio = promedio / len(scores_serializados)
     
-    return jsonify(data)
+        
+#     print(promedio)
+#     # modelar la info para mandar
+#     data = {
+#         'promedio': promedio,
+#         'comentarios':list(map(lambda score: score['review_comments'], scores_serializados))
+#     }
+    
+#     return jsonify(data)
+
+#GET Y POST Favoritos
+@api.route('/users/<int:user_id>/favorites', methods=['GET','POST'])
+def getPost_UserFav(user_id):
+    get_User = User.query.filter_by(id=user_id).first()
+    if request.method == 'GET':
+        if not get_User:
+            return jsonify({"404_Msg": "Not found"}), 400
+        else:
+            userFavs = get_User.serialize()
+            return jsonify(userFavs), 200
+
+    if request.method == 'POST':
+        #request.getjson es para captar de un formulario del front-end
+        if not get_User:
+            return jsonify({"404_Msg":"User not found, check ID"}), 404
+
+        data = request.get_json()
+        request_idPlace = data.get("place_id")
+        
+        if not request_idPlace:
+            return jsonify({"400_Msg":"Bad request\nInput a valid place id"}), 400
+
+        if request_idPlace:
+            valid_place = Place.query.get(request_idPlace)
+            if not valid_place:
+                return jsonify({"404_Msg":"Not found\nPlace id is invalid"}), 404
+            else:
+                new_favPlace = Favorite_Place(user_id=user_id, place_id=request_idPlace)
+                db.session.add(new_favPlace)
+                db.session.commit()
+
+        return jsonify({"All_Good":"New fave was added"}), 200
 
 @api.route('/recoverpassword', methods=['POST'])
 def recoverpassword():

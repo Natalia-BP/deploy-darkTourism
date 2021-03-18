@@ -33,8 +33,9 @@ export const ModalLogin = () => {
 				if (data.Msg) {
 					alert(data.Msg);
 				} else {
+					console.log(data);
 					sessionStorage.setItem("u_token", data.token);
-					sessionStorage.setItem("nick_name", data.user.nick_name);
+					sessionStorage.setItem("nickname", data.user.nickname);
 					sessionStorage.setItem("user_id", data.user.uid);
 					actions.login();
 					setRedirect(true);
