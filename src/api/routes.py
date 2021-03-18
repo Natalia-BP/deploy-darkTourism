@@ -1,13 +1,17 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
+import os
+from flask import Flask, request, jsonify, url_for, Blueprint, current_app
 from api.models import db, User, Place, Scores, Favorite_Place
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 import datetime # se importo para que funcione el login (datetime(token))
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_mail import Message
 
+
+# mail = Mail(app)
 api = Blueprint('api', __name__)
 
 
@@ -101,7 +105,7 @@ def create_user():
 
     new_user = User()
     new_user.email = email
-    new_user.password = password
+    new_user.password = generate_password_hash(password)
     new_user.is_active = is_active
     new_user.nickname = nickname
 
@@ -275,8 +279,39 @@ def getPost_UserFav(user_id):
 
         return jsonify({"All_Good":"New fave was added"}), 200
 
- 
+@api.route('/recoverpassword', methods=['POST'])
+def recoverpassword():
+    user_email = request.json.get('user_email')
+    if not user_email:
+        return jsonify ({"msg":"El correo no es válido"}), 400
+    found_email = User.query.filter_by(email=user_email).first()
+    if not found_email:
+        return jsonify ({"msg":"Si el correo es válido se ha enviado la información de recuperación"}), 400
+    
+    expires=datetime.timedelta(hours=1)
+    access_token=create_access_token(identity=found_email.email, expires_delta=expires)
+    access_token=access_token.replace(".", "$")
+    msg = Message("Test email", recipients=[user_email])
+    msg.html = f"""<h1>Usted ha solicitado resetear su contraseña, de modo contrario haga caso omiso ha este mensaje.</h1><br/><a href="{os.environ.get('FRONTEND_URL')}{access_token}">haga click en el siguiente link</a>"""
+    current_app.mail.send(msg)
+    return jsonify ({"msg":"Enviado con éxito"})
 
+@api.route('/resetpassword', methods=['POST'])
+@jwt_required()
+def resetpassword():
+    current_user=get_jwt_identity()
+    password=request.json.get("password")
+    repassword=request.json.get("repassword")
+
+    if not password or not repassword:
+        return jsonify({"msg":"Por favor complete los espacios correctamente"}), 400
+    if password != repassword:
+        return jsonify({"msg":"Ambas contraseñas deben ser iguales"}), 400
+    
+    found_user = User.query.filter_by(email=current_user).first()
+    found_user.password = generate_password_hash(password)
+    db.session.commit()
+    return jsonify({"msg":"La contraseña ha sido cambiada con éxito"}), 200
 
     
 
