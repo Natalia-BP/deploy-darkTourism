@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Logo_Bid from "../../../img/Logo_BID.png";
 
 export const Footer = () => (
-	<footer className="d-flex flex-column flex-md-row justify-content-around py-5">
+	<footer className="d-flex flex-column flex-md-row justify-content-around footer mt-auto py-5">
 		<div className="col-md-2 text-center text-md-left">
 			<ul className="indexList list-unstyled">
 				<h3>Índice</h3>
