@@ -9,6 +9,16 @@ export const DescripPlace = () => {
 				<div className="text-description">
 					<h2 className="mb-3">{!!store.currentplace && store.currentplace.name_place}</h2>
 					<p>{!!store.currentplace && store.currentplace.description}</p>
+					<button
+						onClick={() => {
+							let data = {
+								user_id: 1,
+								place_id: store.currentplace.id
+							};
+							actions.fetchPostFavorite(data);
+						}}>
+						<i className="fas fa-heart" />
+					</button>
 					{/* {!!store.currentplace && store.currentplace.average_stars} */}
 				</div>
 				<div className="descrip_place front">

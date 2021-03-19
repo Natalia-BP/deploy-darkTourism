@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
+from flask_mail import Mail
 from api.utils import APIException, generate_sitemap
 from api.models import db
 from api.routes import api
@@ -34,6 +35,20 @@ CORS(app)
 # Setup the Flask-JWT-Extended extension
 app.config["JWT_SECRET_KEY"] = "cualquiercosa"
 jwt = JWTManager(app)
+
+#RECOVER PASSWORD EMAIL
+mail_settings = {
+    "MAIL_SERVER": os.environ.get('MAIL_SERVER'),
+    "MAIL_PORT":  os.environ.get('MAIL_PORT'),
+    "MAIL_USE_SSL": bool(os.environ.get('MAIL_USE_SSL')),
+    "MAIL_USERNAME": os.environ.get('MAIL_USERNAME'),
+    "MAIL_PASSWORD": os.environ.get('MAIL_PASSWORD'),
+    "MAIL_DEFAULT_SENDER": os.environ.get('MAIL_USERNAME')
+}
+
+app.config.update(mail_settings)
+mail = Mail(app)
+app.mail= mail
 
 # add the admin
 setup_admin(app)
