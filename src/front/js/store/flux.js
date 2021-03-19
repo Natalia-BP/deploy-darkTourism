@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 	return {
 		store: {
 			nick_name: "nick_name",
@@ -11,9 +11,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			login: () => {
 				setStore({
-					nike_name: sessionStorage.getItem("nike_name"),
+					nick_name: sessionStorage.getItem("nick_name"),
 					token: sessionStorage.getItem("u_token"),
-					user_id: sessionStorage.getItem("user_id")
+					user_id: sessionStorage.getItem("user_id"),
+					redirect_logout: false
 				});
 			},
 			fetchPlaces: () => {
@@ -39,13 +40,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			logout: () => {
 				setStore({
-					redirect_logout: true,
-					token: null,
 					nick_name: "nick_name",
-					user_id: null
+					redirect_logout: true,
+					token: null
 				});
-				sessionStorage.removeItem("u_token");
 				sessionStorage.removeItem("nick_name");
+				sessionStorage.removeItem("u_token");
 				sessionStorage.removeItem("user_id");
 			}
 		}

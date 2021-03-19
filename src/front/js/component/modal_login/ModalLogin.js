@@ -35,7 +35,7 @@ export const ModalLogin = () => {
 				} else {
 					sessionStorage.setItem("u_token", data.token);
 					sessionStorage.setItem("nick_name", data.user.nick_name);
-					sessionStorage.setItem("user_id", data.user.uid);
+					sessionStorage.setItem("user_id", data.user.id);
 					actions.login();
 					setRedirect(true);
 				}
