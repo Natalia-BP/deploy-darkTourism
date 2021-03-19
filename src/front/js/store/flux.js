@@ -30,6 +30,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 				sessionStorage.removeItem("u_token");
 				sessionStorage.removeItem("nick_name");
 				sessionStorage.removeItem("user_id");
+				// sessionStorage.clear()
 			},
 
 			//User POST review
