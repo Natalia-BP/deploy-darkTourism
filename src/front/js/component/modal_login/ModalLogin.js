@@ -35,8 +35,8 @@ export const ModalLogin = () => {
 				} else {
 					console.log(data);
 					sessionStorage.setItem("u_token", data.token);
-					sessionStorage.setItem("nickname", data.user.nickname);
-					sessionStorage.setItem("user_id", data.user.uid);
+					sessionStorage.setItem("nick_name", data.user.nick_name);
+					sessionStorage.setItem("user_id", data.user.id);
 					actions.login();
 					setRedirect(true);
 				}
@@ -51,8 +51,8 @@ export const ModalLogin = () => {
 						<h1>Ingresa a tu cuenta</h1>
 					</div>
 					<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
-						<LoginGoogle />
-						<LoginFacebook />
+						{/* <LoginGoogle />
+						<LoginFacebook /> */}
 					</div>
 					<br />
 					<h6 id="or">o utiliza tu correo</h6>
