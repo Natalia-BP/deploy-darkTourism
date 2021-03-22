@@ -26,7 +26,7 @@ export const InfoPlace = () => {
 				<Carrusel />
 			</div>
 			<DescripPlace />
-			<Map />
+			<Map placeId={placeId.id} />
 			<div className="container">
 				{!!store.currentplace &&
 					store.currentplace.scores.map(elem => {

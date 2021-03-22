@@ -3,53 +3,15 @@ import PropTypes from "prop-types";
 
 export const Carrusel = () => {
 	return (
-		<div
-			id="carouselExampleFade"
-			className="carousel slide carousel-fade"
-			data-ride="carousel"
-			data-interval="3000">
-			<ol className="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" className="active" />
-				<li data-target="#carouselExampleIndicators" data-slide-to="1" />
-				<li data-target="#carouselExampleIndicators" data-slide-to="2" />
-			</ol>
-			<div className="carousel-inner rounded">
-				<div className="carousel-item active">
-					<img
-						src="https://elrincondelmae.files.wordpress.com/2015/05/isla-san-lucas-costa-rica.jpg"
-						className="d-block w-100 rounded"
-						alt="..."
-						width="100px"
-						height="500px"
-					/>
-				</div>
-				<div className="carousel-item">
-					<img
-						src="https://elrincondelmae.files.wordpress.com/2015/05/2242617_0.jpg"
-						className="d-block w-100 rounded"
-						alt="..."
-						width="100px"
-						height="500px"
-					/>
-				</div>
-				<div className="carousel-item">
-					<img
-						src="https://distritocarmen.vecinosactivos.news/wp-content/uploads/sites/3/2018/06/33138081115_3e239688f2_b.jpg"
-						className="d-block w-100 rounded"
-						alt="..."
-						width="100px"
-						height="500px"
-					/>
-				</div>
+		<div id="cube-container">
+			<div className="cube">
+				<img src="https://www.nacion.com/resizer/8WjMbGNqkX8EgVPdSIy1GHAbd9E=/1200x0/center/middle/filters:quality(100)/www.nacion.com/resizer/Vtd4dQP-JzG5RbskdM7kvVFBJnU=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/RQWVYYEYXBB7TOIOYVFBGQMWU4.jpg" />
+				<img src="https://i.pinimg.com/736x/c5/d7/ff/c5d7ff8042569df62ccf582eeaf528f1.jpg" />
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Hospital_San_Juan_de_Dios._1902.jpg/1200px-Hospital_San_Juan_de_Dios._1902.jpg" />
+				<img src="https://38.media.tumblr.com/e5e63479c58f5362c54c93a51e3a3d48/tumblr_nthvcue9iy1tqou9go1_500.gif" />
+				<img src="https://41.media.tumblr.com/41e0585497f082ef9a6e4f19d2f9c4c5/tumblr_o1cvnwq90X1u7gnm9o1_500.jpg" />
+				<img src="http://cdnstatic.visualizeus.com/thumbs/f5/7e/night,sky,stars,universe,woods,galaxy-f57e8ae3cacafe11eadddb74e739f734_h.jpg" />
 			</div>
-			<a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-				<span className="carousel-control-prev-icon" aria-hidden="true" />
-				<span className="sr-only">Previous</span>
-			</a>
-			<a className="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-				<span className="carousel-control-next-icon" aria-hidden="true" />
-				<span className="sr-only">Next</span>
-			</a>
 		</div>
 	);
 };
