@@ -51,7 +51,7 @@ export const ModalLogin = () => {
 						<h1>Ingresa a tu cuenta</h1>
 					</div>
 					<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
-						{/* <LoginGoogle />*/}
+						{/* <LoginGoogle /> */}
 						<LoginFacebook />
 					</div>
 					<br />
