@@ -90,7 +90,7 @@ export const Navbar = () => {
 										}}>
 										Logout
 									</div>
-									{store.redirect_logout ? <Redirect to="/" /> : null}
+									{store.redirect_logout ? <Redirect to="/" /> : null} {/*valorar redirect */}
 								</a>
 							</div>
 						</li>
