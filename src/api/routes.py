@@ -247,14 +247,14 @@ def create_score():
 #     return jsonify(data)
 
 #GET Y POST Favoritos
-@api.route('/users/<int:user_id>/favorites', methods=['GET','POST'])
+@api.route('/user/<int:user_id>/favorites', methods=['GET','POST'])
 def getPost_UserFav(user_id):
     get_User = User.query.filter_by(id=user_id).first()
     if request.method == 'GET':
         if not get_User:
             return jsonify({"404_Msg": "Not found"}), 400
         else:
-            userFavs = get_User.serialize()
+            userFavs = get_User.serialize2()
             return jsonify(userFavs), 200
 
     if request.method == 'POST':
@@ -312,11 +312,3 @@ def resetpassword():
     found_user.password = generate_password_hash(password)
     db.session.commit()
     return jsonify({"msg":"La contraseña ha sido cambiada con éxito"}), 200
-
-    
-
-
-
-
-
-
