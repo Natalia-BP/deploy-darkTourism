@@ -130,17 +130,6 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 					});
 			},
 
-			//logout: () => {
-			//setStore({
-			//nick_name: "nick_name",
-			//redirect_logout: true,
-			//token: null
-			//});
-			//sessionStorage.removeItem("nick_name");
-			//sessionStorage.removeItem("u_token");
-			//sessionStorage.removeItem("user_id");
-			//},
-
 			recoverPassword: email => {
 				const sendData = {
 					user_email: email

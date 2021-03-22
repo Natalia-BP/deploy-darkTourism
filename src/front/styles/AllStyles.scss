@@ -47,29 +47,25 @@ body{
 }
 
 .imgDest{
-    border-radius: 15px;
     transition: transform .2s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 400px;
-    max-height: 500px;
+    box-shadow: 4px 5px 9px rgba(0, 0, 0, 0.2)
+
 }
 
 .imgDest:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.sameSizeImgs img {
+height: 360px;
+width: 360px;
+ object-fit: cover;
 }
 
 .locationDest{
-    font-size: 15px;
+    font-size: 0.8rem;
 }
 
-.SubTitlDest{
-    font-size: 16px;
-    margin-left: 4rem;
-}
-
-.TitlDest{
-    margin-left: 4rem;
-}
 // FIN ESTILO DESTACADOS
 
 
