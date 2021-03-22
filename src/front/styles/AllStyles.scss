@@ -31,8 +31,8 @@
 
 //jumbotron
 .jumbotron {
-    padding-top: 9rem;
-    padding-bottom: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 
@@ -251,15 +251,71 @@ footer .indexList li:hover {
 // BOTONES LOGIN REDES SOCIALES
 
 //Carousel
-.carousel-inner{
-    box-shadow: 10px 10px 25px #696969;
+#cube-container {
+    padding-top: 5rem;
+	width: 300px;
+	height: 300px;
+	margin: 80px auto;
+	perspective: 800px;			
 }
-.carousel.slide{
-    margin-bottom: 10rem;
-    width: 80%;
-    margin-left: 6rem;
 
+#cube-container:before {
+	content: '';
+  position: absolute; 
+	top: 90px;
+	left: 0;
+	width: 100%; 
+	height: 100%;	
+	box-shadow: 0 0 75px 20px rgba(0, 0, 0, 0.1), inset 0 0 350px 350px rgba(0, 0, 0, 0.1);	
+	transform: rotateX(95deg) translateZ(-80px) scale(1);	
+	animation: rotateShadow 16s infinite;	
 }
+
+.cube {	
+	height: 100%;
+	width: 100%;
+	position: relative;
+	transform-style: preserve-3d;			
+	transition: all 0.8s ease-in-out;		
+	animation: rotate 16s infinite;	
+}
+
+.cube img {
+	position: absolute;
+	width: 240px;
+	height: 240px;		
+	backface-visibility: hidden;		
+}
+
+.cube img:nth-child(1) {
+	transform: rotateY(0deg) translateZ(120px);
+}
+.cube img:nth-child(2) {
+	transform: rotateY(90deg) translateZ(120px);
+}
+.cube img:nth-child(3) {
+	transform: rotateY(-90deg) translateZ(120px);
+}
+.cube img:nth-child(4) {
+	transform: rotateY(180deg) translateZ(120px);
+}
+
+@keyframes rotate {
+	0% { transform: rotateY(0deg); }		
+	25% { transform: rotateY(90deg); }		
+	50% { transform: rotateY(180deg);}	
+	75% {  transform: rotateY(270deg); }	
+	100% { transform: rotateY(360deg); }
+}
+
+@keyframes rotateShadow {
+	0% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(360deg); }		
+	25% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(270deg); }		
+	50% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(180deg);}	
+	75% {  transform: rotateX(95deg) translateZ(-80px) scale(1)  rotateZ(90deg); }	
+	100% { transform: rotateX(95deg) translateZ(-80px) scale(1)  rotateZ(0deg); }
+}
+
 
 //DescripPlace
 .text-description{
@@ -270,6 +326,7 @@ footer .indexList li:hover {
 }
 
 .descrip_place.background{
+    margin-top: 15rem;
     background-color: rgb(158, 163, 189);
     border-radius: 5px;
 }
@@ -277,7 +334,7 @@ footer .indexList li:hover {
     grid-row: 1;
     grid-column: 9 / -1;
     z-index: 1;
-    padding-top: 8rem;
+    padding-top: 7rem;
     position: relative;
     top: 2rem;
     left: 2rem;
@@ -288,7 +345,7 @@ footer .indexList li:hover {
     grid-column: 8 / span 3;
     z-index: 2;
     position: relative;
-    bottom: 2rem;
+    bottom: 1rem;
 }
 
 // ESTILOS SIGNUP

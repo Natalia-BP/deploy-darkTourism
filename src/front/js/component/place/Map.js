@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Map = () => {
+export const Map = props => {
 	const sitios = {
 		ubicacion: {
 			ubic1:
@@ -15,7 +15,7 @@ export const Map = () => {
 	return (
 		<div className="container">
 			<iframe
-				src={sitios.ubicacion.ubic2}
+				src={sitios.ubicacion["ubic" + props.placeId]}
 				width="600"
 				height="450"
 				style={{ border: "0" }}
@@ -24,4 +24,8 @@ export const Map = () => {
 			/>
 		</div>
 	);
+};
+
+Map.propTypes = {
+	placeId: PropTypes.number
 };
