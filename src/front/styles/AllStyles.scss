@@ -31,7 +31,7 @@
 
 //jumbotron
 .jumbotron {
-    padding-top: 10rem;
+    padding-top: 11rem;
     padding-bottom: 10rem;
 }
 
@@ -178,16 +178,14 @@ footer .indexList li:hover {
 }
 
 //ComingSoon
-* {
-  box-sizing: border-box;
-}
+
 .column {
-  float: left;
+  float: center;
   width: 50%;
-  padding: 8px;
+  padding: 5px;
 }
 .column img {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 .row:after {
   content: "";
