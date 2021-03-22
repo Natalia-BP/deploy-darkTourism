@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 	return {
 		store: {
 			nick_name: "nick_name",
@@ -15,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					nick_name: sessionStorage.getItem("nick_name"),
 					token: sessionStorage.getItem("u_token"),
-					user_id: sessionStorage.getItem("user_id")
+					user_id: sessionStorage.getItem("user_id"),
+					redirect_logout: false
 				});
 				alert("Has ingresado a tu cuenta");
 			},
@@ -31,6 +32,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				sessionStorage.removeItem("nick_name");
 				sessionStorage.removeItem("user_id");
 				alert("Has salido de tu cuenta");
+				// sessionStorage.clear()
+
 			},
 
 			//User POST review
@@ -127,7 +130,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("Error:", error);
 					});
 			},
-
+      
+			logout: () => {
+				setStore({
+					nick_name: "nick_name",
+					redirect_logout: true,
+					token: null
+				});
+				sessionStorage.removeItem("nick_name");
+				sessionStorage.removeItem("u_token");
+				sessionStorage.removeItem("user_id");
+			},
+      
 			recoverPassword: email => {
 				const sendData = {
 					user_email: email
