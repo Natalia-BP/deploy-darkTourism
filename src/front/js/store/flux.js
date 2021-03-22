@@ -33,7 +33,6 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 				sessionStorage.removeItem("user_id");
 				alert("Has salido de tu cuenta");
 				// sessionStorage.clear()
-
 			},
 
 			//User POST review
@@ -130,7 +129,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 						console.error("Error:", error);
 					});
 			},
-      
+
 			logout: () => {
 				setStore({
 					nick_name: "nick_name",
@@ -141,7 +140,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 				sessionStorage.removeItem("u_token");
 				sessionStorage.removeItem("user_id");
 			},
-      
+
 			recoverPassword: email => {
 				const sendData = {
 					user_email: email

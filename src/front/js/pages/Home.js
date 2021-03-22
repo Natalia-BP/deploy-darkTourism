@@ -11,10 +11,10 @@ export const Home = () => {
 	return (
 		<div className="container-fluid px-0">
 			<Jumbotron />
-			<DescripHome />
 			<div className="fondoDestacados">
 				<Destacados />
 			</div>
+			<DescripHome />
 			<div className="container">
 				<ComingSoon />
 			</div>

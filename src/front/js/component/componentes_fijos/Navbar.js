@@ -19,18 +19,18 @@ export const Navbar = () => {
 				</button>
 				<div className="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
 					<ul className="navbar-nav">
-						<li className="nav-item active mr-2">
+						<li className="nav-item mr-2">
 							<a className="nav-link text-reset" href="#">
 								<Link className="linkTag" to="/">
 									Home <span className="sr-only">Home</span>
 								</Link>
 							</a>
 						</li>
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<a className="nav-link text-reset" href="#">
 								Link
 							</a>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 				<div className="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25">
@@ -42,7 +42,7 @@ export const Navbar = () => {
 					<ul className="nav navbar-nav ml-auto">
 						<li className="nav-item dropdown">
 							<a className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
-								<i className="fas fa-heart" />
+								<i className="fas fa-heart heartbeat" />
 							</a>
 							<div className="dropdown-menu dropdown-menu-right">
 								{store.user_id == null ? (

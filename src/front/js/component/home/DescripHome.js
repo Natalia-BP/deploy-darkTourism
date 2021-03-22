@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import textura_fondo from "../../../img/textura_fondo.jpg";
+// import blue from "../../../img/blue.jpg";
 import img_descrip1 from "../../../img/img_descrip1.jpg";
 import img_descrip2 from "../../../img/img_descrip2.jpg";
 
@@ -16,9 +16,9 @@ export const DescripHome = () => {
 						<img src={img_descrip1} className="imgDescrip" width="360px" />
 					</div>
 
-					<div className="stackImg_item background">
-						<img src={textura_fondo} className="imgDescrip" width="400px" />
-					</div>
+					{/* <div className="stackImg_item background">
+						<img src={blue} className="imgDescrip" width="600px" />
+					</div> */}
 					<div className="textTurismo">
 						<h2 className="mb-3">Tanatoturismo</h2>
 						<p>
