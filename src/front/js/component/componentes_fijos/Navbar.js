@@ -45,12 +45,10 @@ export const Navbar = () => {
 								<i className="fas fa-heart" />
 							</a>
 							<div className="dropdown-menu dropdown-menu-right">
-								{/* {store.favorite_place.map((elem, index) => {
-									return <li key={index}>{elem.place_id}</li>;
-								})} */}
-
-								{!!store.favoritePlaces &&
-									store.favoritePlaces.favorite_place.map(elem => {
+								{store.user_id == null ? (
+									<a className="nav-link">¡Debes ingresar a una cuenta para agregar favoritos!</a>
+								) : store.favoritePlaces.length > 0 ? (
+									store.favoritePlaces.map(elem => {
 										return (
 											<Link
 												key={elem.id}
@@ -59,7 +57,10 @@ export const Navbar = () => {
 												{elem.place_name}
 											</Link>
 										);
-									})}
+									})
+								) : (
+									<a className="nav-link">No has registrado favoritos</a>
+								)}
 							</div>
 						</li>
 						<li className="nav-item dropdown">
@@ -67,31 +68,33 @@ export const Navbar = () => {
 								<i className="far fa-user-circle" />
 							</a>
 							<div className="dropdown-menu dropdown-menu-right">
-								<a className="dropdown-item" type="button">
-									<Link to="/signup" className="dropdown-item">
-										Registrarse
-									</Link>
-								</a>
-								<a className="dropdown-item" type="button">
-									<Link to="/Login" className="dropdown-item">
-										Ingresar
-									</Link>
-								</a>
-								<a className="dropdown-item" type="button">
-									<Link to="/passwordrecover" className="dropdown-item">
-										Recuperar contraseña
-									</Link>
-								</a>
-								<a className="dropdown-item" type="button">
-									<div
-										className="dropdown-item"
-										onClick={() => {
-											actions.logout();
-										}}>
-										Logout
-									</div>
-									{store.redirect_logout ? <Redirect to="/" /> : null} {/*valorar redirect */}
-								</a>
+								{store.user_id == null ? (
+									<>
+										<a className="dropdown-item" type="button">
+											<Link to="/signup" className="dropdown-item">
+												Registrarse
+											</Link>
+										</a>
+										<a className="dropdown-item" type="button">
+											<Link to="/Login" className="dropdown-item">
+												Ingresar
+											</Link>
+										</a>
+									</>
+								) : (
+									<>
+										<a className="dropdown-item" type="button">
+											<div
+												className="dropdown-item"
+												onClick={() => {
+													actions.logout();
+												}}>
+												Logout
+											</div>
+											{store.redirect_logout ? <Redirect to="/" /> : null}
+										</a>
+									</>
+								)}
 							</div>
 						</li>
 					</ul>

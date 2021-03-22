@@ -12,7 +12,7 @@ export const DescripPlace = () => {
 					<button
 						onClick={() => {
 							let data = {
-								user_id: 1,
+								user_id: store.user_id,
 								place_id: store.currentplace.id
 							};
 							actions.fetchPostFavorite(data);

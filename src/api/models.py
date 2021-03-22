@@ -22,7 +22,10 @@ class User(db.Model):
             "nickname" : self.nickname,
             "is_active" : self.is_active,
             "favorite_place" : list(map(lambda fav_place: fav_place.serialize(),self.favorite_place))
-        } 
+        }
+    
+    def serialize2(self):
+        return list(map(lambda fav_place: fav_place.serialize(),self.favorite_place))
 
 class Place(db.Model):
     __tablename__ = "place"
