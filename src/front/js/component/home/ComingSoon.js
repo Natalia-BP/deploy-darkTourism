@@ -2,7 +2,7 @@ import React from "react";
 
 export const ComingSoon = () => {
 	return (
-		<div className="row">
+		<div className="row px-4">
 			<div className="column">
 				<img
 					src="https://elrincondelmae.files.wordpress.com/2015/05/isla-san-lucas-costa-rica.jpg"
