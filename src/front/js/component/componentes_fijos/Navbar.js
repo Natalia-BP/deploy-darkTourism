@@ -87,6 +87,7 @@ export const Navbar = () => {
 											<div
 												className="dropdown-item"
 												onClick={() => {
+													console.log("Haciendo click");
 													actions.logout();
 												}}>
 												Logout

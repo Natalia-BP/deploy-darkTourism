@@ -22,6 +22,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 			},
 
 			logout: () => {
+				console.log("logout");
 				setStore({
 					redirect_logout: true,
 					token: null,
@@ -130,7 +131,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 					});
 			},
 
-			logout: () => {
+			/* logout: () => {
 				setStore({
 					nick_name: "nick_name",
 					redirect_logout: true,
@@ -139,7 +140,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 				sessionStorage.removeItem("nick_name");
 				sessionStorage.removeItem("u_token");
 				sessionStorage.removeItem("user_id");
-			},
+			}, */
 
 			recoverPassword: email => {
 				const sendData = {
