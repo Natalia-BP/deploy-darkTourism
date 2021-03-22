@@ -131,6 +131,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 					});
 			},
 
+<<<<<<< HEAD
 			/* logout: () => {
 				setStore({
 					nick_name: "nick_name",
@@ -142,6 +143,8 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 				sessionStorage.removeItem("user_id");
 			}, */
 
+=======
+>>>>>>> 9fc6a1fd9a7df3581573c67746b56bfe7f405df9
 			recoverPassword: email => {
 				const sendData = {
 					user_email: email
