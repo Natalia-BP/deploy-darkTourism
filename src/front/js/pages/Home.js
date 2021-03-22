@@ -11,11 +11,11 @@ export const Home = () => {
 	return (
 		<div className="container-fluid px-0">
 			<Jumbotron />
-			<DescripHome />
 			<div className="fondoDestacados">
 				<Destacados />
 			</div>
-			<div className="container">
+			<DescripHome />
+			<div className="container-fluid fondoDestacados">
 				<ComingSoon />
 			</div>
 		</div>
