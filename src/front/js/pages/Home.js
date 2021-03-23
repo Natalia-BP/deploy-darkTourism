@@ -15,7 +15,7 @@ export const Home = () => {
 				<Destacados />
 			</div>
 			<DescripHome />
-			<div className="container-fluid fondoDestacados">
+			<div className="container-fluid fondoCoomingSoon">
 				<ComingSoon />
 			</div>
 		</div>
