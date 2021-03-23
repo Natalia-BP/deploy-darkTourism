@@ -29,7 +29,7 @@ export const ModalLogin = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log(data.Msg);
+				//console.log(data.Msg);
 				if (data.Msg) {
 					alert(data.Msg);
 				} else {

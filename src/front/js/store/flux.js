@@ -22,6 +22,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 			},
 
 			logout: () => {
+				console.log("logout");
 				setStore({
 					redirect_logout: true,
 					token: null,
