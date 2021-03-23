@@ -118,7 +118,12 @@
 
 //jumbotron
 .jumbotron {
+<<<<<<< HEAD
     padding-top: 10rem;
+=======
+    padding-top: 11rem;
+    padding-bottom: 10rem;
+>>>>>>> d83fcc0a2aaef13d2d0ead4ef98a65a56770d9c0
 }
 
 
@@ -598,16 +603,14 @@ footer .indexList li:hover {
 }
 
 //ComingSoon
-* {
-  box-sizing: border-box;
-}
+
 .column {
-  float: left;
+  float: center;
   width: 50%;
-  padding: 8px;
+  padding: 5px;
 }
 .column img {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 .row:after {
   content: "";
@@ -622,6 +625,12 @@ footer .indexList li:hover {
 }
 .row .column img:hover{
     filter: grayscale(0) brightness(1);
+}
+.firts-photo{
+    margin-left: 22rem;
+}
+.second-photo{
+    margin-left: 22rem;
 }
 
 // BOTONES Y CONTENEDOR LOGIN REDES SOCIALES
