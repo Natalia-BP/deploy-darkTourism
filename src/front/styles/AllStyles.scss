@@ -118,12 +118,7 @@
 
 //jumbotron
 .jumbotron {
-<<<<<<< HEAD
     padding-top: 10rem;
-=======
-    padding-top: 11rem;
-    padding-bottom: 10rem;
->>>>>>> d83fcc0a2aaef13d2d0ead4ef98a65a56770d9c0
 }
 
 
@@ -605,18 +600,14 @@ footer .indexList li:hover {
 //ComingSoon
 
 .column {
-  float: center;
-  width: 50%;
+  float: left;
+  width: 30%;
   padding: 5px;
 }
 .column img {
   margin-top: 10px;
 }
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 .row .column img{
     cursor: pointer;
     filter: grayscale(1) brightness(0.5);
@@ -627,12 +618,18 @@ footer .indexList li:hover {
     filter: grayscale(0) brightness(1);
 }
 .firts-photo{
-    margin-left: 22rem;
+    margin-left: 70rem;
 }
 .second-photo{
-    margin-left: 22rem;
+    margin-left: 70rem;
+}
+.third-photo{
+    margin-left: 70rem;
 }
 
+// .col-imag{
+
+// }
 // BOTONES Y CONTENEDOR LOGIN REDES SOCIALES
 #cont-formLogin{
     margin-top: 9%;
