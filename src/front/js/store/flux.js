@@ -50,7 +50,6 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 					})
 					.then(() => {
 						getActions().fetchPlacesbyId(data.place_id);
-						alert("Agregado a tus favoritos");
 					});
 			},
 
@@ -70,6 +69,7 @@ const getState = ({ getStore, getActions, setStore, setRedirect }) => {
 							.then(response => response.json())
 							.then(() => {
 								getActions().fetchGetFavorite();
+								alert("Agregado a tus favoritos");
 							});
 					} else {
 						favArr.forEach(element => {

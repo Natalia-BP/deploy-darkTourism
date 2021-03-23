@@ -5,7 +5,7 @@ import profpic from "../../../img/prof_picPrueba.jpg";
 export const Comments = props => {
 	return (
 		<>
-			<div className="userComments">
+			<div className="userComments mb-4">
 				<div className="comment px-4 pt-3 pb-1 rounded">
 					<div className="header d-flex flex-row align-items-center justify-content-center justify-content-md-start">
 						<div className="profPic mw-25">

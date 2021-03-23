@@ -21,13 +21,13 @@ export const InfoPlace = () => {
 		[placeId.id]
 	);
 	return (
-		<div className="container-fluid px-0">
+		<div className="container-fluid px-0 infoPlace">
 			<div className="container">
 				<Carrusel />
-			</div>
-			<DescripPlace />
-			<Map placeId={placeId.id} />
-			<div className="container">
+				<DescripPlace />
+				<h3 className="text-center mb-3">Ubicación</h3>
+				<Map placeId={placeId.id} />
+
 				{!!store.currentplace &&
 					store.currentplace.scores.map(elem => {
 						return (

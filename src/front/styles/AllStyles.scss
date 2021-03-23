@@ -10,6 +10,11 @@
     width: 100%;
 }
 
+
+.nav-logo{
+    width: 80px;
+}
+
 .linkTag {
     text-decoration: none;
     color: black;
@@ -35,11 +40,16 @@
     padding-bottom: 10rem;
 }
 
+// clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
+.bg-image{
+    background-image: url("https://images.unsplash.com/photo-1578429829702-37f6e0f6c44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80");
+}
 
 body{
     background-color: #191919;
     color: whitesmoke;
 }
+//jumbotron
 
 // INICIO ESTILO DESTACADOS
 .fondoDestacados{
@@ -59,13 +69,12 @@ body{
 .sameSizeImgs img {
 height: 360px;
 width: 360px;
- object-fit: cover;
+object-fit: cover;
 }
 
 .locationDest{
     font-size: 0.8rem;
 }
-
 // FIN ESTILO DESTACADOS
 
 
@@ -123,9 +132,25 @@ footer .indexList li:hover {
 }
 /* //DescripHome Nati BP*/
 
+/* Mapa InfoPlace */
+.mapaInfoPlace {
+    margin-bottom: 4rem;
+}
+
+iframe {
+    margin: none;
+    padding: none;
+    overflow: hidden;
+    border: none;
+}
+/* //Mapa InfoPlace */
+
 /* Comments InfoPlace Nati BP */
+.infoPlace {
+    background-color: #282828;
+}
+
 .userComments {
-    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse la cajita de comments
     color: white;
 }
 
@@ -149,7 +174,6 @@ footer .indexList li:hover {
 
 /*Formulario Comments InfoPlace Nati BP*/
 .userRating {
-    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse el formulario
     color: white;
 }
 
@@ -164,17 +188,7 @@ footer .indexList li:hover {
 }
 /* //Formulario Comments InfoPlace Nati BP */
 
-// clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
-.bg-image{
-    background-image: url("https://images.unsplash.com/photo-1578429829702-37f6e0f6c44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80");
-}
-
-.nav-logo{
-    width: 80px;
-}
-
 //ComingSoon
-
 .column {
   float: center;
   width: 50%;
@@ -327,9 +341,11 @@ footer .indexList li:hover {
 
 .descrip_place.background{
     margin-top: 15rem;
-    background-color: rgb(158, 163, 189);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
+    margin-bottom: 5rem;
 }
+
 .descrip_place.back{
     grid-row: 1;
     grid-column: 9 / -1;
@@ -340,6 +356,7 @@ footer .indexList li:hover {
     left: 2rem;
 
 }
+
 .descrip_place.front{
     grid-row: 1;
     grid-column: 8 / span 3;

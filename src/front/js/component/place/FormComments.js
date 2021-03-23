@@ -129,7 +129,6 @@ export const FormComments = props => {
 					</div>
 				</div>
 			</form>
-			<div style={{ color: "red" }}>{JSON.stringify(rating)}</div>
 		</>
 	);
 };
