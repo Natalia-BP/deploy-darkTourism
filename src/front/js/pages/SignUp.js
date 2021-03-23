@@ -51,7 +51,6 @@ export const SignUp = () => {
 						</div>
 					</div>
 					<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
-						<LoginGoogle />
 						<LoginFacebook />
 					</div>
 					<br />
