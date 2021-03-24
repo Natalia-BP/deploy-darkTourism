@@ -19,7 +19,7 @@ export const InfoPlace = () => {
 		[placeId.id]
 	);
 	return (
-		<div className="container-fluid px-0 infoPlace">
+		<div className="container-fluid px-0">
 			<div className="container">
 				<Carrusel />
 				<DescripPlace />

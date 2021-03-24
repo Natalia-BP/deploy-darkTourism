@@ -566,10 +566,6 @@ iframe {
 /* //Mapa InfoPlace */
 
 /* Comments InfoPlace Nati BP */
-.infoPlace {
-    background-color: #282828;
-}
-
 .userComments {
     color: white;
 }
@@ -671,35 +667,46 @@ iframe {
     
 }
 
-.item1 {
-    grid-area: header;
-}
-
 .item2 {
-    grid-area: menu;
+    grid-row: 1;
+    float: right;
 }
 
 .item3 {
-    grid-area: main; 
+    grid-row: 1; 
+}
+
+.tinyGrid {
+    display: grid;
+    grid-gap: 10px;
+
+}
+
+.img-float {
+    grid-row: 1;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .item4 {
-    grid-area: right;
+    grid-row: 1;
+    grid-column: 2 / -1;
+    float: right;
 }
 
 .item5 {
-    grid-area: footer;
+    grid-row: 2;
+    grid-column: 1;
 }
 
 .grid-container {
-    grid-row: 1;
-    grid-column: 4 / -1;
+    grid-column: 4;
   display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer footer footer';
-  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+    position: relative;
+grid-gap: 10px;
 }
 
 .onephoto {
@@ -807,7 +814,7 @@ iframe {
 
 .descrip_place.background{
     margin-top: 15rem;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #282828;
     border-radius: 5px;
     margin-bottom: 5rem;
 }
