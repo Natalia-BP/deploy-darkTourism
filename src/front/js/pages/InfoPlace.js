@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Comments } from "../component/place/Comments";
 import { FormComments } from "../component/place/FormComments";
-// import { DescripHome } from "../component/home/DescripHome";
-// import { ComingSoon } from "../component/home/ComingSoon";
 import { Carrusel } from "../component/place/Carrusel";
 import { DescripPlace } from "../component/place/DescripPlace";
 import { Map } from "../component/place/Map";

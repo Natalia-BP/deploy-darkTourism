@@ -11,6 +11,11 @@
     width: 100%;
 }
 
+
+.nav-logo{
+    width: 80px;
+}
+
 .linkTag {
     text-decoration: none;
     color: whitesmoke;
@@ -18,7 +23,7 @@
 
 .linkTag:hover {
     text-decoration: none;
-    color: rgb(41, 41, 41);
+    color: rgb(223, 222, 222);
     cursor: pointer;
 }
 
@@ -122,6 +127,10 @@
     padding-bottom: 9rem;
 }
 
+// clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
+.bg-image{
+    background-image: url("https://images.unsplash.com/photo-1578429829702-37f6e0f6c44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80");
+}
 
 body{
     background-image: url(https://images.unsplash.com/photo-1595878830509-58b6ae9d81f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
@@ -133,6 +142,7 @@ body{
     // background-color: #1F1F1F;
     color: whitesmoke;
 }
+//jumbotron
 
 .dark-place{
     font-family: 'Averia Serif Libre', cursive;
@@ -459,7 +469,6 @@ body{
 }
 
 
-
 // INICIO ESTILO DESTACADOS
 .fondoDestacados{
     background-color: #111111;
@@ -478,13 +487,12 @@ body{
 .sameSizeImgs img {
 height: 360px;
 width: 360px;
- object-fit: cover;
+object-fit: cover;
 }
 
 .locationDest{
     font-size: 0.8rem;
 }
-
 // FIN ESTILO DESTACADOS
 
 .fondoCoomingSoon{
@@ -513,44 +521,56 @@ footer .indexList li:hover {
 
 /* DescripHome Nati BP*/
 .imgDescrip{
-    box-shadow: 10px 10px 5px rgba(8, 8, 8, 0.678);
-    border-radius: 5px;
+    box-shadow: 10px 10px 15px rgba(8, 8, 8, 0.678);
 }
+
 .stackImgs {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
 }
 
-.stackImg_item.background {
-    grid-row: 1;
-    grid-column: 1 / span 6;
-}
-
 .stackImg_item.back {
     grid-row: 1;
     grid-column: 3 / -1;
     z-index: 1;
-    padding-top: 6rem;
+    padding-top: 7rem;
+    margin-bottom: 3rem;
 }
 
 .stackImg_item.front {
     grid-row: 1;
     grid-column: 2 / span 3;
     z-index: 2;
-    padding-top: 2rem;
+    margin-top: 3rem;
 }
 
 .textTurismo {
     grid-row: 1;
     grid-column: 7 / span 3;
-    padding-top: 6rem;
+    padding-top: 7rem;
 }
 /* //DescripHome Nati BP*/
 
+/* Mapa InfoPlace */
+.mapaInfoPlace {
+    margin-bottom: 4rem;
+}
+
+iframe {
+    margin: none;
+    padding: none;
+    overflow: hidden;
+    border: none;
+}
+/* //Mapa InfoPlace */
+
 /* Comments InfoPlace Nati BP */
+.infoPlace {
+    background-color: #282828;
+}
+
 .userComments {
-    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse la cajita de comments
     color: white;
 }
 
@@ -574,11 +594,10 @@ footer .indexList li:hover {
 
 /*Formulario Comments InfoPlace Nati BP*/
 .userRating {
-    background-color: #323C73; //recuerden que este color es solo temporal, para que pueda apreciarse el formulario
     color: white;
 }
 
-.userRating .btn {
+.btn {
     background-color: rgb(14, 223, 125);
     color: inherit;
 }
@@ -589,17 +608,7 @@ footer .indexList li:hover {
 }
 /* //Formulario Comments InfoPlace Nati BP */
 
-// clase creada, contiene imagen de fondo, si quieren pueden utilizarla (.bg-image)
-.bg-image{
-    background-image: url("https://images.unsplash.com/photo-1578429829702-37f6e0f6c44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80");
-}
-
-.nav-logo{
-    width: 80px;
-}
-
 //ComingSoon
-
 .text-focus-in {
 	-webkit-animation: text-focus-in 40s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
             animation: text-focus-in 40s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -643,103 +652,84 @@ footer .indexList li:hover {
   }
 }
 
+.comingSoon {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
 .vertical{
+    grid-row: 1;
+    grid-column: 1 / span 1;
+    position: relative;
+    margin-left: -10rem;
+}
+
+.vertical h1 {
     transform: rotate(-90deg);
     transform-origin: right;
     margin-bottom: 24rem;
     margin-left: -10rem;
 }
 
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: menu;
+}
+
+.item3 {
+    grid-area: main; 
+}
+
+.item4 {
+    grid-area: right;
+}
+
+.item5 {
+    grid-area: footer;
+}
 
 .grid-container {
-    margin-left: 15rem;
+    grid-row: 1;
+    grid-column: 4 / -1;
   display: grid;
   grid-template-areas:
     'header header header header header header'
     'menu main main main right right'
     'menu footer footer footer footer footer';
   grid-gap: 10px;
-  //background-color: #2196F3;
-  padding: 10px;
 }
 
-.onephoto{
+.onephoto {
     width: 25rem;
     height: 30rem;
 }
-.twophoto{
+
+.twophoto {
     width: 12rem;
     height: 13rem;
 }
-.lastphoto{
+
+.lastphoto {
     width: 25rem;
     height: 16rem;
 }
 
-.row .grid-container .itemall img{
+.grid-container .itemall img {
     cursor: pointer;
     filter: grayscale(1) brightness(0.5);
     border-radius: 5px;
     transition: 0.3s linear;
 }
-.row .grid-container .itemall img:hover{
+
+.grid-container .itemall img:hover{
     filter: grayscale(0) brightness(1);
 }
+// Termina ComingSoon
 
-
-// .col-imag{
-
-// }
-// BOTONES Y CONTENEDOR LOGIN REDES SOCIALES
-#cont-formLogin{
-    margin-top: 9%;
-    margin-bottom: 5%;
-    
-}
-#cont-img-login{
-    margin: 0;
-    padding: 0;
-    background-image: url(https://static.brusheezy.com/system/resources/previews/000/013/939/original/grunge-texture-by-krist-photoshop-textures.jpg);
-    background-size: cover;
-    height: auto;
-}
-
-.facebook{
-    background-color: #3B5998;
-    color: white;
-    font-family: 'Noto Sans JP', sans-serif;
-    height: 45px;
-    font-size: 14px;
-}
-
-.facebook:hover {
-  background-color: #4e71ba;
-}
-
-#or {
-  display: flex;
-  flex-direction: row;
-}
-#or:before, #or:after{
-  content: "";
-  flex: 1 1;
-  border-bottom: 1px solid;
-  margin: auto;
-}
-#or:before {
-  margin-left: 750px;
-  margin-right: 30px
-}
-#or:after {
-  margin-left: 30px;
-  margin-right: 750px
-}
-// BOTONES LOGIN REDES SOCIALES
 
 //Carousel
 #cube-container {
@@ -806,7 +796,7 @@ footer .indexList li:hover {
 	75% {  transform: rotateX(95deg) translateZ(-80px) scale(1)  rotateZ(90deg); }	
 	100% { transform: rotateX(95deg) translateZ(-80px) scale(1)  rotateZ(0deg); }
 }
-
+//Termina Carrusel
 
 //DescripPlace
 .text-description{
@@ -818,9 +808,11 @@ footer .indexList li:hover {
 
 .descrip_place.background{
     margin-top: 15rem;
-    background-color: rgb(158, 163, 189);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
+    margin-bottom: 5rem;
 }
+
 .descrip_place.back{
     grid-row: 1;
     grid-column: 9 / -1;
@@ -831,6 +823,7 @@ footer .indexList li:hover {
     left: 2rem;
 
 }
+
 .descrip_place.front{
     grid-row: 1;
     grid-column: 8 / span 3;
@@ -839,8 +832,9 @@ footer .indexList li:hover {
     bottom: 1rem;
 }
 
+// Estilos formularios
 // ESTILOS SIGNUP
-#bgimg{
+.bgImgForms {
     margin: 0;
     padding: 0;
     background-image: url(https://static.brusheezy.com/system/resources/previews/000/013/939/original/grunge-texture-by-krist-photoshop-textures.jpg);
@@ -848,44 +842,16 @@ footer .indexList li:hover {
     height: auto;
 }
 
-#cont-formSignUp{
-    margin-top: 8%;
-    margin-bottom: 5%;
-}
-
-#formSignUp{
-    margin: auto;
+.formBgStyle {
     width: 500px;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, 0.493);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
 }
 // FIN ESTILOS SIGNUP
 
 // ESTILOS PASSWORD RECOVERY
-.bg-pass{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Roboto', sans-serif;
-    background-image: url(https://static.brusheezy.com/system/resources/previews/000/013/939/original/grunge-texture-by-krist-photoshop-textures.jpg);
-    background-size: cover;
-}
-.contpassword{
+.contpassword {
     margin-top: 150px;
-}
-
-.box{
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%,-50%);
-    margin: auto;
-    width: 500px;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.8);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
 }
 
 .box h2{
@@ -939,16 +905,3 @@ footer .indexList li:hover {
 }
 // FIN ESTILOS PASSWORD RECOVERY
 
-//RESET
-.cont-reset-password{
-    margin-top: 8%;
-    margin-bottom: 5%;
-}
-
-.bg-pass-reset{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Roboto', sans-serif;
-    background-image: url(https://static.brusheezy.com/system/resources/previews/000/013/939/original/grunge-texture-by-krist-photoshop-textures.jpg);
-    background-size: cover;
-}

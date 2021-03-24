@@ -13,12 +13,11 @@ export const Map = props => {
 		}
 	};
 	return (
-		<div className="container">
+		<div className="d-flex justify-content-center mapaInfoPlace">
 			<iframe
 				src={sitios.ubicacion["ubic" + props.placeId]}
-				width="600"
-				height="450"
-				style={{ border: "0" }}
+				className="w-100 rounded-lg"
+				height="400px"
 				allowFullScreen=""
 				loading="lazy"
 			/>

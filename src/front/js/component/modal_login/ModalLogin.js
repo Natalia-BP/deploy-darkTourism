@@ -45,45 +45,62 @@ export const ModalLogin = () => {
 
 	return (
 		<>
-			<div id="cont-img-login">
-				<div id="cont-formLogin">
-					<div className="text-center mt-1 d-flex justify-content-center align-items-center">
-						<h1>Ingresa a tu cuenta</h1>
-					</div>
-					<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
-						{/* <LoginGoogle /> */}
-						<LoginFacebook />
-					</div>
-					<br />
-					<h6 id="or">o utiliza tu correo</h6>
-					<div className="text-center mt-3 d-flex justify-content-center align-items-center">
-						<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
-							<div className="form-floating mb-3">
-								<i className="fas fa-envelope" />
-								<input
-									type="email"
-									className="form-control"
-									id="floatingInput"
-									placeholder="nombre@dominio.com"
-									onChange={e => setEmail(e.target.value)}
-								/>
-							</div>
-							<div className="form-floating">
-								<i className="fas fa-lock" />
-								<input
-									type="password"
-									className="form-control"
-									id="floatingPassword"
-									placeholder="Contraseña"
-									onChange={e => setPass(e.target.value)}
-								/>
-							</div>
-							<input type="submit" className="btn btn-primary mt-3 mb-3" value="Login" />
-							<p className="forgot-password text-right">
-								<Link to={"/passwordrecover"}>Forgot password?</Link>
-							</p>
-						</form>
-						{redirect ? <Redirect to="/" /> : ""}
+			<div className="bgImgForms container-fluid d-flex flex-column pt-5">
+				<div className="py-5">
+					<div className="formBgStyle container p-4 my-5 mx-auto rounded">
+						<div className="text-center mt-3 d-flex justify-content-center align-items-center">
+							<h1>Ingresa a tu cuenta</h1>
+						</div>
+						<div className="container d-flex justify-content-center align-items-center">
+							{/* <LoginGoogle /> */}
+							<LoginFacebook />
+						</div>
+						<br />
+						<section className="mb-5 mt-4">
+							<p className="lead text-center">o utiliza tu correo</p>
+						</section>
+						<div className="text-center d-flex justify-content-center align-items-center">
+							<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
+								<div className="form-floating mb-3">
+									<label htmlFor="floatingInput">
+										<i className="fas fa-envelope" /> Correo electrónico
+									</label>
+									<input
+										type="email"
+										className="form-control"
+										id="floatingInput"
+										placeholder="nombre@dominio.com"
+										onChange={e => setEmail(e.target.value)}
+									/>
+								</div>
+								<div className="form-floating">
+									<label htmlFor="floatingPassword">
+										<i className="fas fa-lock" /> Contraseña
+									</label>
+
+									<input
+										type="password"
+										className="form-control"
+										id="floatingPassword"
+										placeholder="Contraseña"
+										onChange={e => setPass(e.target.value)}
+									/>
+								</div>
+
+								<div className="form-row justify-content-end my-3">
+									<Link className="linkTag text-right" to={"/passwordrecover"}>
+										Forgot password?
+									</Link>
+								</div>
+
+								<div className="form-row justify-content-center">
+									<button type="submit" className="btn rounded-pill px-3 my-3">
+										Ingresar
+									</button>
+								</div>
+							</form>
+							{redirect ? <Redirect to="/" /> : ""}
+						</div>
 					</div>
 				</div>
 			</div>

@@ -10,8 +10,8 @@ const PasswordRecover = () => {
 		alert("Hemos enviado un link a su email");
 	};
 	return (
-		<div className="bg-pass vh-100">
-			<div className="contpassword">
+		<div className="bgImgForms container-fluid vh-100 d-flex align-items-center justify-content-center p-5">
+			<div className="formBgStyle container my-5 rounded p-4">
 				<div className="box">
 					<h2>Recuperar contraseña</h2>
 					<form onSubmit={handleSubmit}>
@@ -26,7 +26,12 @@ const PasswordRecover = () => {
 							/>
 							<label>Email</label>
 						</div>
-						<input type="submit" name="" value="Submit" />
+
+						<div className="form-row justify-content-center">
+							<button className="btn rounded-pill px-3" type="submit">
+								Recuperar
+							</button>
+						</div>
 					</form>
 				</div>
 			</div>

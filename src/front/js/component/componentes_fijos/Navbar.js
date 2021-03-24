@@ -70,12 +70,12 @@ export const Navbar = () => {
 							<div className="dropdown-menu dropdown-menu-right">
 								{store.user_id == null ? (
 									<>
-										<a className="dropdown-item" type="button">
+										<a className="dropdown-item">
 											<Link to="/signup" className="dropdown-item">
 												Registrarse
 											</Link>
 										</a>
-										<a className="dropdown-item" type="button">
+										<a className="dropdown-item">
 											<Link to="/Login" className="dropdown-item">
 												Ingresar
 											</Link>
@@ -96,6 +96,12 @@ export const Navbar = () => {
 										</a>
 									</>
 								)}
+								<div className="dropdown-divider" />
+								<a className="dropdown-item">
+									<Link to="/passwordrecover" className="dropdown-item">
+										¿Olvidaste tu contraseña?
+									</Link>
+								</a>
 							</div>
 						</li>
 					</ul>

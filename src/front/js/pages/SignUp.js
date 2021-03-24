@@ -41,9 +41,9 @@ export const SignUp = () => {
 	};
 
 	return (
-		<div id="bgimg">
-			<div id="cont-formSignUp">
-				<div id="formSignUp">
+		<div className="bgImgForms container-fluid pt-5">
+			<div className="py-5">
+				<div className="formBgStyle container mx-auto my-5 rounded">
 					<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
 						<div className="row">
 							<h1 className="text-white mt-5">Crea una cuenta</h1>
@@ -83,7 +83,11 @@ export const SignUp = () => {
 									onChange={e => setNickName(e.target.value)}
 								/>
 							</div>
-							<input type="submit" className="btn btn-primary mb-5" value="Registrarse" />
+							<div className="form-row justify-content-center">
+								<button type="submit" className="btn rounded-pill px-3 my-3">
+									Registrarse
+								</button>
+							</div>
 						</form>
 					</div>
 					{redirect ? <Redirect to="/login" /> : ""}

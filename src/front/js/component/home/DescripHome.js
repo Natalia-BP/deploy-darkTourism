@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-// import blue from "../../../img/blue.jpg";
-import caution from "../../../img/caution.jpg";
-import house from "../../../img/House.jpg";
+import imgDescrip1 from "../../../img/img_descrip3.jpg";
+import imgDescrip2 from "../../../img/img_descrip.jpg";
 
 export const DescripHome = () => {
 	return (
@@ -9,16 +8,13 @@ export const DescripHome = () => {
 			<div className="descripTurismo">
 				<div className="stackImgs">
 					<div className="stackImg_item front">
-						<img src={house} className="imgDescrip" width="250px" />
+						<img src={imgDescrip2} className="imgDescrip rounded-sm" width="220px" />
 					</div>
 
 					<div className="stackImg_item back">
-						<img src={caution} className="imgDescrip" width="360px" />
+						<img src={imgDescrip1} className="imgDescrip rounded-sm" width="360px" />
 					</div>
 
-					{/* <div className="stackImg_item background">
-						<img src={blue} className="imgDescrip" width="600px" />
-					</div> */}
 					<div className="textTurismo">
 						<h2 className="mb-3">Tanatoturismo</h2>
 						<p className="mb-5">
