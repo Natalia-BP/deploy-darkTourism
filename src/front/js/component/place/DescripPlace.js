@@ -1,8 +1,16 @@
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
+import PropTypes from "prop-types";
 
-export const DescripPlace = () => {
+export const DescripPlace = props => {
 	const { store, actions } = useContext(Context);
+	const descrip_photo = {
+		photos: {
+			photo1: "https://i.pinimg.com/originals/3a/06/d4/3a06d441cef47d33fa60467af497644b.jpg",
+			photo2:
+				"https://elrincondelmae.files.wordpress.com/2015/05/salc3b3n-hospital-san-juan-de-dios-inicios-siglo-xx.png"
+		}
+	};
 	return (
 		<div className="container descrip_place background">
 			<div className="stackImgs">
@@ -23,7 +31,7 @@ export const DescripPlace = () => {
 				</div>
 				<div className="descrip_place front">
 					<img
-						src="https://i.pinimg.com/originals/00/ff/fb/00fffbd93d57f8fab60a7769a87db9e8.jpg"
+						src={descrip_photo.photos["photo" + props.placeId]}
 						className="imgDescrip rounded"
 						width="200px"
 						height="250px"
@@ -32,7 +40,7 @@ export const DescripPlace = () => {
 
 				<div className="descrip_place back">
 					<img
-						src="https://www.ucr.ac.cr/medios/fotos/pri_x-large/2015/img_2990.jpg"
+						src={descrip_photo.photos["photo" + props.placeId]}
 						className="imgDescrip rounded"
 						width="250px"
 					/>
@@ -40,4 +48,8 @@ export const DescripPlace = () => {
 			</div>
 		</div>
 	);
+};
+
+DescripPlace.propTypes = {
+	placeId: PropTypes.number
 };

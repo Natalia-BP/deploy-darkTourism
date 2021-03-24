@@ -22,10 +22,9 @@ export const InfoPlace = () => {
 	);
 	return (
 		<div className="container-fluid px-0">
-			<div className="container">
-				<Carrusel />
-			</div>
-			<DescripPlace />
+			<Carrusel />
+			<div className="container" />
+			<DescripPlace placeId={placeId.id} />
 			<Map placeId={placeId.id} />
 			<div className="container">
 				{!!store.currentplace &&

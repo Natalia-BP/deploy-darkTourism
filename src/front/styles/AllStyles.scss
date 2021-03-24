@@ -646,7 +646,6 @@ footer .indexList li:hover {
 .vertical{
     transform: rotate(-90deg);
     transform-origin: right;
-    //margin-left: 30px;
     margin-bottom: 24rem;
     margin-left: -10rem;
 }
@@ -748,7 +747,7 @@ footer .indexList li:hover {
 	width: 300px;
 	height: 300px;
 	margin: 80px auto;
-	perspective: 800px;			
+	perspective: 400px;			
 }
 
 #cube-container:before {
