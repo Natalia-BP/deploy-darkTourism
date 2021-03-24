@@ -2,7 +2,7 @@ import React from "react";
 
 export const ComingSoon = () => {
 	return (
-		<div className="row px-4 pb-5 pt-3 imgstyle">
+		<div className="comingSoon py-4">
 			<div className="vertical">
 				<h1 className="text-focus-in">Próximamente</h1>
 			</div>

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Context } from "../../store/appContext";
+import { Redirect } from "react-router-dom";
 import { useContext, useState } from "react";
 
 export const FormComments = props => {
@@ -15,14 +16,21 @@ export const FormComments = props => {
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		let data = {
-			//user_id: store.user_id,
-			user_id: 1,
-			place_id: store.currentplace.id,
-			score: rating,
-			review_comments: comment
-		};
-		actions.fetchPostReview(data);
+		if (store.user_id === null) {
+			alert("¡Debes estar logueado para comentar!");
+		} else {
+			let data = {
+				user_id: store.user_id,
+				place_id: store.currentplace.id,
+				score: rating,
+				review_comments: comment
+			};
+			actions.fetchPostReview(data);
+			setComment("");
+			document.getElementById("textAreaComment").value = "";
+			setHoverRating(0);
+			setRating(0);
+		}
 	};
 
 	//Logica de estrellas
@@ -91,9 +99,9 @@ export const FormComments = props => {
 	};
 	return (
 		<>
-			<form className="userRating col-md-6 p-0 my-4" onSubmit={handleSubmit}>
+			<form className="userRating col-md-6 p-0 my-5" onSubmit={handleSubmit}>
 				<h4 className="text-center text-md-left mb-3">Ingresa tu review</h4>
-				<div className="form-group my-5">
+				<div className="form-group mt-5">
 					<div className="form-row justify-content-center justify-content-md-start">
 						<p className="d-inline mr-2">¿Qué calificación le darías?</p>
 						<div className="starLine">
@@ -118,18 +126,17 @@ export const FormComments = props => {
 					<textarea
 						className="form-control mb-3"
 						id="textAreaComment"
-						rows="3"
+						rows="4"
 						placeholder="Escribe tu comentario aquí"
 						onChange={e => {
 							setComment(e.target.value);
 						}}
 					/>
 					<div className="form-row justify-content-center justify-content-md-end">
-						<button className="btn rounded-pill">Publicar</button>
+						<button className="btn rounded-pill px-3">Publicar</button>
 					</div>
 				</div>
 			</form>
-			<div style={{ color: "red" }}>{JSON.stringify(rating)}</div>
 		</>
 	);
 };

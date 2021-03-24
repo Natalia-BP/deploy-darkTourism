@@ -133,14 +133,15 @@ def get_place(id):
     scores = Scores.query.filter_by(place_id=id).all()
     scores_serializados = list(map(lambda score: score.serialize2(),scores))
     print(scores_serializados)
-    promedio = 0
 
+    # Calculando el promedio del lugar
+    promedio = 0
     if len(scores_serializados) > 0:
         for score in scores_serializados:
             promedio += score
         promedio = promedio / len(scores_serializados)
-
-    place["average_stars"]=promedio
+    # format para que solo sean 2 lugares despues de la coma
+    place["average_stars"]=format(promedio, '.2f')
     return jsonify(place)
 
 # POST 
@@ -229,21 +230,18 @@ def create_score():
 #     print(scores)
 #     scores_serializados = list(map(lambda place_id: place_id.serialize(),scores)) 
 #     print(scores_serializados)
-
 #     promedio = 0
+
 #     if len(scores_serializados) > 0:
 #         for score in scores_serializados:
 #             promedio += score['score']
-#         promedio = promedio / len(scores_serializados)
-    
-        
+#             promedio = int(promedio) / int(len(scores_serializados))
 #     print(promedio)
 #     # modelar la info para mandar
 #     data = {
-#         'promedio': promedio,
+#         'promedio': format(promedio, '.2f'),
 #         'comentarios':list(map(lambda score: score['review_comments'], scores_serializados))
 #     }
-    
 #     return jsonify(data)
 
 #GET Y POST Favoritos

@@ -7,19 +7,29 @@ export const DescripPlace = () => {
 		<div className="container descrip_place background">
 			<div className="stackImgs">
 				<div className="text-description">
-					<h2 className="mb-3">{!!store.currentplace && store.currentplace.name_place}</h2>
-					<p>{!!store.currentplace && store.currentplace.description}</p>
-					<button
-						onClick={() => {
-							let data = {
-								user_id: store.user_id,
-								place_id: store.currentplace.id
-							};
-							actions.fetchPostFavorite(data);
-						}}>
-						<i className="fas fa-heart" />
-					</button>
-					{/* {!!store.currentplace && store.currentplace.average_stars} */}
+					<section className="header d-flex align-items-center">
+						<h2 className="font-weight-bold mb-3 d-inline">
+							{!!store.currentplace && store.currentplace.name_place}
+						</h2>
+						<button
+							type="button"
+							className="btn d-inline ml-3"
+							data-toggle="tooltip"
+							data-placement="top"
+							title="Agrégalo a tus favoritos"
+							onClick={() => {
+								let data = {
+									user_id: store.user_id,
+									place_id: store.currentplace.id
+								};
+								actions.fetchPostFavorite(data);
+							}}>
+							<i className="fas fa-heart" />
+						</button>
+					</section>
+					<p className="lead">{!!store.currentplace && store.currentplace.description}</p>
+					<h4 className="d-inline">Calificación: </h4>
+					<p className="d-inline">{!!store.currentplace && store.currentplace.average_stars}</p>
 				</div>
 				<div className="descrip_place front">
 					<img

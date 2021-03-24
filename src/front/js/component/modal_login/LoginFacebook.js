@@ -37,17 +37,18 @@ function LoginFacebook() {
 	// });
 
 	return (
-		<div className="LoginFacebook">
+		<div>
 			<br />
 			<br />
 			<FacebookLogin
+				className="btn rounded"
 				appId="511002516959996"
 				autoLoad={false}
 				fields="name,email,picture"
 				callback={responseFacebook}
 				textButton="Iniciar Sesión con Facebook"
 				icon={"fab fa-facebook"}
-				cssClass="facebook"
+				//cssClass="facebook"
 			/>
 			{redirect ? <Redirect to="/" /> : ""}
 		</div>
