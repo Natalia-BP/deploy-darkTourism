@@ -22,7 +22,7 @@ export const InfoPlace = () => {
 		<div className="container-fluid px-0">
 			<Carrusel />
 			<div className="container" />
-			<DescripPlace placeId={placeId.id} />
+			<DescripPlace />
 			<Map placeId={placeId.id} />
 			<div className="container">
 				{!!store.currentplace &&
