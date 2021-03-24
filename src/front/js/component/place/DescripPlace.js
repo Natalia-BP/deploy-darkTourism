@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
-import PropTypes from "prop-types";
 
-export const DescripPlace = props => {
+export const DescripPlace = () => {
 	const { store, actions } = useContext(Context);
 	const descrip_photo = {
 		photos: {
-			photo1: "https://i.pinimg.com/originals/3a/06/d4/3a06d441cef47d33fa60467af497644b.jpg",
+			photo1:
+				"https://2.bp.blogspot.com/-lrpX61fe8sA/V9I5GwWNcXI/AAAAAAAABz0/O4VtmV6_xV0zBjDX5rSEhnZpBAfsLX50gCLcB/s1600/DSC01231.JPG",
 			photo2:
-				"https://elrincondelmae.files.wordpress.com/2015/05/salc3b3n-hospital-san-juan-de-dios-inicios-siglo-xx.png"
+				"https://www.lanacion.com.py/resizer/vOUjmx5Dl4nL83OX5xzkyMCqC0o=/fit-in/1000x800/smart/cloudfront-us-east-1.images.arcpublishing.com/lanacionpy/LEANJUJSANA45H2LC376ZAJE2Y.jpg"
 		}
 	};
 	return (
@@ -41,7 +41,7 @@ export const DescripPlace = props => {
 				</div>
 				<div className="descrip_place front">
 					<img
-						src={descrip_photo.photos["photo" + props.placeId]}
+						src={descrip_photo.photos["photo1"]}
 						className="imgDescrip rounded"
 						width="200px"
 						height="250px"
@@ -49,17 +49,9 @@ export const DescripPlace = props => {
 				</div>
 
 				<div className="descrip_place back">
-					<img
-						src={descrip_photo.photos["photo" + props.placeId]}
-						className="imgDescrip rounded"
-						width="250px"
-					/>
+					<img src={descrip_photo.photos["photo2"]} className="imgDescrip rounded" width="250px" />
 				</div>
 			</div>
 		</div>
 	);
-};
-
-DescripPlace.propTypes = {
-	placeId: PropTypes.number
 };
