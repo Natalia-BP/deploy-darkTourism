@@ -43,20 +43,19 @@ export const SignUp = () => {
 	return (
 		<div className="bgImgForms container-fluid pt-5">
 			<div className="py-5">
-				<div className="formBgStyle container mx-auto my-5 rounded">
-					<div className="container text-center mt-5 d-flex justify-content-center align-items-center">
-						<div className="row">
-							<h1 className="text-white mt-5">Crea una cuenta</h1>
-							<br />
-						</div>
-					</div>
+				<div className="formBgStyle py-3 container mx-auto my-5 rounded">
+					<h1 className="text-white text-center mt-5">Crea una cuenta</h1>
+
 					<div className="container text-center mt-1 d-flex justify-content-center align-items-center">
 						<LoginFacebook />
 					</div>
 					<br />
-					<div className="text-center mt-3 d-flex justify-content-center align-items-center">
+					<div className="mt-3 d-flex justify-content-center align-items-center">
 						<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
 							<div className="form-floating mb-3">
+								<label htmlFor="floatingInput">
+									<i className="fas fa-envelope-open" /> Correo
+								</label>
 								<input
 									type="email"
 									className="form-control"
@@ -66,6 +65,9 @@ export const SignUp = () => {
 								/>
 							</div>
 							<div className="form-floating mb-3">
+								<label htmlFor="floatingPassword">
+									<i className="fas fa-lock" /> Contraseña
+								</label>
 								<input
 									type="password"
 									className="form-control"
@@ -75,11 +77,14 @@ export const SignUp = () => {
 								/>
 							</div>
 							<div className="form-floating mb-3">
+								<label htmlFor="floatingName">
+									<i className="fas fa-user" /> Username
+								</label>
 								<input
 									type="text"
 									className="form-control"
 									id="floatingName"
-									placeholder="NickName"
+									placeholder="Username"
 									onChange={e => setNickName(e.target.value)}
 								/>
 							</div>

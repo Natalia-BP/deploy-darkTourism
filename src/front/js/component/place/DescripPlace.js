@@ -12,7 +12,7 @@ export const DescripPlace = () => {
 		}
 	};
 	return (
-		<div className="container descrip_place background">
+		<div className="container-md descrip_place background">
 			<div className="stackImgs">
 				<div className="text-description">
 					<section className="header d-flex align-items-center">

@@ -48,10 +48,8 @@ export const ModalLogin = () => {
 			<div className="bgImgForms container-fluid d-flex flex-column pt-5">
 				<div className="py-5">
 					<div className="formBgStyle container p-4 my-5 mx-auto rounded">
-						<div className="text-center mt-3 d-flex justify-content-center align-items-center">
-							<h1>Ingresa a tu cuenta</h1>
-						</div>
-						<div className="container d-flex justify-content-center align-items-center">
+						<h1 className="text-center mt-3">Ingresa a tu cuenta</h1>
+						<div className="d-flex justify-content-center">
 							{/* <LoginGoogle /> */}
 							<LoginFacebook />
 						</div>
@@ -59,9 +57,9 @@ export const ModalLogin = () => {
 						<section className="mb-5 mt-4">
 							<p className="lead text-center">o utiliza tu correo</p>
 						</section>
-						<div className="text-center d-flex justify-content-center align-items-center">
-							<form style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
-								<div className="form-floating mb-3">
+						<div>
+							<form onSubmit={e => handleSubmit(e)}>
+								<div className="form-group mb-3">
 									<label htmlFor="floatingInput">
 										<i className="fas fa-envelope" /> Correo electrónico
 									</label>
@@ -73,7 +71,7 @@ export const ModalLogin = () => {
 										onChange={e => setEmail(e.target.value)}
 									/>
 								</div>
-								<div className="form-floating">
+								<div className="form-group">
 									<label htmlFor="floatingPassword">
 										<i className="fas fa-lock" /> Contraseña
 									</label>
